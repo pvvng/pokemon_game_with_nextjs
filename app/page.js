@@ -41,8 +41,7 @@ export default function Home() {
 
 
   if(pokemonData.length > 0){
-      console.log(pokemonData)
-      return(
+       return(
         <div>
           <div className="row">
             {   
@@ -63,7 +62,17 @@ export default function Home() {
         </div>
       )
   }else{
-    return(<h2 style={{textAlign:"center"}}>LOADING...</h2>)
+    return(
+      <div style={{marginTop:'auto', marginBottom:'auto'}}>
+        <div className="sky-bg">
+          <div className="typewriter">
+            <h2 className="typewriter" style={{fontSize:'4rem', textAlign:"center", color:'white'}}>LOADING...</h2>
+          </div>  
+          <img src='/pikachu-running.gif' width={'100%'}/>
+          <img src='/grass.png' width={'100%'}/>
+        </div>
+      </div>
+  )
   }
 }
 
