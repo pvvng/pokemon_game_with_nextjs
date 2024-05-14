@@ -19,9 +19,10 @@ export default function RootLayout({ children }) {
             <Link className="navbar-brand" href="/">
               <img src="/icon.png" alt="pokemon" width="30"/>
             </Link>
-            <Link href='/' className="Link-none-deco">My Page</Link>
-            <Link href={'/battle'} className="Link-none-deco">Battle</Link>
-            <Link href={'/store'} className="Link-none-deco">Store</Link>
+            <Link href='/' className="Link-none-deco">마이페이지</Link>
+            <Link href='/document' className="Link-none-deco">도감</Link>
+            <Link href='/trip' className="Link-none-deco">여행</Link>
+            <Link href='/store' className="Link-none-deco">상점</Link>
             <button>로그인</button>
           </div>
         </nav>
