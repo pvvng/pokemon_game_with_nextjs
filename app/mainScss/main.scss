@@ -1,0 +1,68 @@
+@mixin badge ($color) {
+    background-color: $color;
+    color: white;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 2px;
+}
+
+.grass-badge{
+    @include badge (#339933)
+}
+
+.poison-badge{
+    @include badge (#663399)
+}
+.fire-badge{
+    @include badge (#FF3300)
+}
+.fly-badge{
+    @include badge (#99CCFF)
+}
+.water-badge{
+    @include badge (#6699FF)
+}
+.bug-badge{
+    @include badge (#99CC00)
+}
+.normal-badge{
+    @include badge (#999999)
+}
+.electric-badge{
+    @include badge (#FFCC00)
+}
+.ground-badge{
+    @include badge (#996600)
+}
+.fairy-badge{
+    @include badge (#FFCCCC)
+}
+.fight-badge{
+    @include badge (#FFCC33)
+}
+.esper-badge{
+    @include badge (#ff9696)
+}
+.stone-badge{
+    @include badge (#CCCC99)
+}
+.iron-badge{
+    @include badge (#66CCCC)
+}
+.ice-badge{
+    @include badge (#3366CC)
+}
+.ghost-badge{
+    @include badge (#339933)
+}
+.dragon-badge{
+    @include badge (#003399)
+}
+
+.card-title{
+    font-weight: bold;
+}

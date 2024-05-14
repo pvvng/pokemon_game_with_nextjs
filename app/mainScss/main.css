@@ -1,0 +1,207 @@
+.grass-badge {
+  background-color: #339933;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.poison-badge {
+  background-color: #663399;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.fire-badge {
+  background-color: #FF3300;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.fly-badge {
+  background-color: #99CCFF;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.water-badge {
+  background-color: #6699FF;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.bug-badge {
+  background-color: #99CC00;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.normal-badge {
+  background-color: #999999;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.electric-badge {
+  background-color: #FFCC00;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.ground-badge {
+  background-color: #996600;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.fairy-badge {
+  background-color: #FFCCCC;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.fight-badge {
+  background-color: #FFCC33;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.esper-badge {
+  background-color: #ff9696;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.stone-badge {
+  background-color: #CCCC99;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.iron-badge {
+  background-color: #66CCCC;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.ice-badge {
+  background-color: #3366CC;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.ghost-badge {
+  background-color: #339933;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.dragon-badge {
+  background-color: #003399;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.card-title {
+  font-weight: bold;
+}/*# sourceMappingURL=main.css.map */
