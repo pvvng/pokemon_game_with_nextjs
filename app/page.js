@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './mainScss/main.css'
 import TypeBadge from "./TypeBadge";
+import Loading from "./Loading";
 
 export default function Home() {
 
@@ -63,16 +64,8 @@ export default function Home() {
       )
   }else{
     return(
-      <div style={{marginTop:'auto', marginBottom:'auto'}}>
-        <div className="sky-bg">
-          <div className="typewriter">
-            <h2 className="typewriter" style={{fontSize:'4rem', textAlign:"center", color:'white'}}>LOADING...</h2>
-          </div>  
-          <img src='/pikachu-running.gif' width={'100%'}/>
-          <img src='/grass.png' width={'100%'}/>
-        </div>
-      </div>
-  )
+      <Loading/>
+    )
   }
 }
 

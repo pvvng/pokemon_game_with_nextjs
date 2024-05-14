@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,8 +12,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="ko">
+      <body className={inter.className} style={{background:'#eee'}}>
+        <nav className="navbar bg-body-tertiary mb-5" data-bs-theme="dark">
+          <div className="container">
+            <Link className="navbar-brand" href="/">
+              <img src="/icon.png" alt="pokemon" width="30"/>
+            </Link>
+            <Link href='/' className="Link-none-deco">My Page</Link>
+            <Link href={'/battle'} className="Link-none-deco">Battle</Link>
+            <Link href={'/store'} className="Link-none-deco">Store</Link>
+            <button>로그인</button>
+          </div>
+        </nav>
         {children}
       </body>
     </html>

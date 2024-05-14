@@ -1,0 +1,24 @@
+.main-container{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 60vh;
+}
+
+.inner-container{
+    /* border: 1px solid; */
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+}
+
+.row-container{
+    /* border: 1px solid; */
+    width: 100%;
+    height: 100%;
+}
+
+.content-container{
+    background-color: #eee;
+    width: 100%;
+    height: 20vh;
+}

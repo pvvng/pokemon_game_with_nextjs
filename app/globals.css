@@ -6,6 +6,15 @@ a,h1,h2,h3,h4,h5,p,span{
     margin: 0px;
 }
 
+.Link-none-deco{
+    text-decoration: none;
+    color: white;
+}
+
+.Link-none-deco:hover{
+    color: rgb(118, 118, 252);
+}
+
 .typewriter h2{
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
@@ -16,6 +25,18 @@ a,h1,h2,h3,h4,h5,p,span{
         typing 3.5s steps(40, end),
         blink-caret .75s step-end infinite;
 }
+
+.typewriter{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* border-right: .15em solid orange; The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
 
 /* The typing effect */
 @keyframes typing {
@@ -33,4 +54,36 @@ a,h1,h2,h3,h4,h5,p,span{
     background: url('../public/sky.jpg');
     background-repeat: repeat;
     background-size: contain;
+}
+
+/* .battle-bg{
+    background-image: url('../public/battle.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: auto;
+} */
+
+.context-outer-box{
+    width: 100%;
+    padding: 10px;
+    /* border: ; */
+    /* border-radius: 10px; */
+    border: 3px solid;
+    border-radius: 10px;
+    background-color: white;
+}
+
+
+.context-inner-box{
+    width: 100%;
+    padding: 20px;
+    /* border: 3px solid orange; */
+    border-radius: 10px;
+}
+
+.item-container{
+    width: 100%;
+    padding: 20px;
+    background-color: white;
 }
