@@ -1,7 +1,12 @@
+//pokemon 하나의 정보만 오브젝트 형식으로 기입하기
+//사용시 main.css도 import 해줘야함
+
 export default function TypeBadge({pokemon}){
     return(
         pokemon.korean_type_name.map((type,i) =>{ 
-        let badgeColorByType = ''
+
+        let badgeColorByType = '';
+
         switch (type){
             case '풀':
             badgeColorByType = 'grass-badge'

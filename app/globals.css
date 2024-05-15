@@ -6,6 +6,10 @@ a,h1,h2,h3,h4,h5,p,span{
     margin: 0px;
 }
 
+.op{
+    opacity: 0;
+}
+
 .Link-none-deco{
     text-decoration: none;
     color: white;
@@ -32,6 +36,7 @@ a,h1,h2,h3,h4,h5,p,span{
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
+    animation-iteration-count: infinite;
     animation: 
         typing 3.5s steps(40, end),
         blink-caret .75s step-end infinite;
@@ -90,4 +95,37 @@ a,h1,h2,h3,h4,h5,p,span{
 
 .hide{
     display: none;
+}
+
+.card-title {
+    font-weight: bold;
+}/*# sourceMappingURL=main.css.map */
+
+.search-btn{
+    margin-left: 10px;
+    /* border-radius: 150px; */
+    padding:10px;
+    border: none;
+    background-color: black;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.2rem;
+    transition: all 1s;
+}
+
+.search-btn:hover{
+    background-color: rgb(255, 113, 113);
+}
+
+.search-input{
+    width: 50%;
+    max-width: 200px;
+    height: 48.8px;
+    border: none;
+    /* border: 0.1px soild; */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 1s;
+    /* background-color: grey; */
 }
