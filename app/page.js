@@ -75,10 +75,8 @@ export default async function Home() {
             </div>
             <div className="content-container">
               <p>업적</p>
-
             </div>
           </div>
-
         </div>   
       </div>
     )
