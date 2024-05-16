@@ -14,7 +14,7 @@ export default async function Home() {
   const db = (await connectDB).db('project-pokemon');
   let result = await db.collection('userdata').find().toArray();
 
-
+  // db 에서 불러온 userdata 저장
   let userdata
 
   if (result.length !== 0 && session !== null){
@@ -23,7 +23,9 @@ export default async function Home() {
       //db와 session data 중 겹치는 email이 존재하면 exist 를 true로
       if(data.email === session.user.email){
         exist = true;
-        userdata = data;
+        if(userdata === undefined){
+          userdata = data;
+        }
       }
     })
     if(!exist){
@@ -38,7 +40,6 @@ export default async function Home() {
       <LoginForm session={session}/>
     )
   }
-
 
   if(session !== null){
     return(
