@@ -32,7 +32,9 @@
   padding: 30px;
   background-color: #2d2d2d;
   /* border: 1px solid; */
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   color: white;
   /* background-color: #d14f4f; */
   opacity: 1;

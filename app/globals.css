@@ -129,3 +129,22 @@ a,h1,h2,h3,h4,h5,p,span{
     transition: all 1s;
     /* background-color: grey; */
 }
+
+.login-form-container{
+    width: 100%;
+    padding:20px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.input-container{
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-container input,select{
+    width: 100%;
+    border-radius: 5px;
+}
+

@@ -7,7 +7,7 @@ import './detail.css'
 import '../../badgeScss/badge.css';
 import TypeBadge from "../TypeBadge";
 import { useEffect, useState } from "react";
-import LoadingDetail from "@/app/LoadingDetail";
+import LoadingDetail from "@/app/loadingComponents/LoadingDetail";
 
 export default function(){
   const params = useParams()

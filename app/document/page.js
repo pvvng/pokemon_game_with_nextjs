@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../badgeScss/badge.css';
 import TypeBadge from "./TypeBadge";
-import Loading from "../Loading";
+import Loading from "../loadingComponents/Loading";
 import { useRouter } from "next/navigation";
 import fetchData from "../get_pokemon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
