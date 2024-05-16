@@ -28,7 +28,6 @@ export default function LoginForm ({session}){
                     {/* hidden inputs */}
                     <input name='notorious' defaultValue={0} style={{display:'none'}}/>
                     <input name='gold' defaultValue={0} style={{display : 'none'}}/>
-                    <input name='award' defaultValue={'[]'} style={{display : 'none'}}/>
     
                     <button type="submit" className="btn btn-primary">회원가입</button>
                 </form>

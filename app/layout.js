@@ -2,8 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from "next/link";
-import LoginBtn from "./logBtns/loginBtn";
-import LogoutBtn from './logBtns/logoutBtn'
+import LoginBtn from "./LoginTools/loginBtn";
+import LogoutBtn from './LoginTools/logoutBtn'
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
  

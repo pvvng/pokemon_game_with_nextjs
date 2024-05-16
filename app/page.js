@@ -1,9 +1,8 @@
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
-import './homepage.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connectDB } from "@/util/database";
-import LoginForm from "./logBtns/LoginForm";
+import LoginForm from "./LoginTools/LoginForm";
 
 export default async function Home() {
 
@@ -64,17 +63,17 @@ export default async function Home() {
             <div className="progress" role="progressbar" aria-label="Example with label" aria-valuemin="0" aria-valuemax="100">
               <div className="progress-bar" style={{width: `${(userdata.notorious).toString() * 10}%`, background:'#111111'}}>{userdata.notorious}</div>
             </div>
-            <div className="left-content-container">
+            <div className="content-container">
               <p>포켓몬</p>
               {/* 가진 포켓몬 map */}
             </div>
-            <div className="left-content-container">
+            <div className="content-container">
               <p>아이템 / 골드</p>
               {/* item map */}
               <p>골드 : {(userdata.gold).toString()}</p>
               <p>아이템 : </p>
             </div>
-            <div className="left-content-container">
+            <div className="content-container">
               <p>업적</p>
 
             </div>
