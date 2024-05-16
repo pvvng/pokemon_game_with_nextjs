@@ -3,42 +3,28 @@ import { getServerSession } from "next-auth";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connectDB } from "@/util/database";
 import LoginForm from "./LoginTools/LoginForm";
+import userCheck from "./userCheck";
 
 export default async function Home() {
 
-  // login data 불러오기
-  let session = await getServerSession(authOptions);
+    // login data 불러오기
+    let session = await getServerSession(authOptions);
 
-  //db userdata
-  const db = (await connectDB).db('project-pokemon');
-  let result = await db.collection('userdata').find().toArray();
+    //db userdata
+    const db = (await connectDB).db('project-pokemon');
+    let result = await db.collection('userdata').find().toArray();
 
-  // db 에서 불러온 userdata 저장
-  let userdata
 
-  if (result.length !== 0 && session !== null){
-    let exist = false;
-    result.map(data => {
-      //db와 session data 중 겹치는 email이 존재하면 exist 를 true로
-      if(data.email === session.user.email){
-        exist = true;
-        if(userdata === undefined){
-          userdata = data;
-        }
-      }
-    })
+    //db 에서 불러온 userdata 저장
+    let { exist, userdata } = userCheck(result, session);
+
     if(!exist){
-      //db에 현재 로그인한 유저 정보가 없을때만 form 보여주기
-      return(
+        //db에 현재 로그인한 유저 정보가 없을때만 form 보여주기
+        return(
         <LoginForm session={session}/>
-      )
+        )
     }
-  }else{
-    //db의 userdata가 비어있다면 form 보여주기
-    return(
-      <LoginForm session={session}/>
-    )
-  }
+  
 
   if(session !== null){
     return(
@@ -88,5 +74,6 @@ export default async function Home() {
     )
   }
 }
+
 
 
