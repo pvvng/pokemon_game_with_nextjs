@@ -29,7 +29,6 @@ export default async function RootLayout({ children }) {
             <Link href='/' className="Link-none-deco">마이페이지</Link>
             <Link href='/document' className="Link-none-deco">도감</Link>
             <Link href='/trip' className="Link-none-deco">여행</Link>
-            <Link href='/store' className="Link-none-deco">포켓몬 센터</Link>
             {
               session !== null?
               <div>

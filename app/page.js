@@ -42,7 +42,8 @@ export default async function Home() {
 
           {/* content */}
           <div className="col-md-6" style={{textAlign:"center"}}>
-            <h2>트레이너 {userdata.name}</h2>
+            <h2> {userdata.name}</h2>
+            <p style={{fontWeight:'bold'}}>[로켓단]</p>
 
             <span style={{marginTop:'10px'}}>악명</span>
             {/* 가진 악명 * 10 % */}
@@ -50,7 +51,7 @@ export default async function Home() {
               <div className="progress-bar" style={{width: `${(userdata.notorious).toString() * 10}%`, background:'#111111'}}>{userdata.notorious}</div>
             </div>
             <div className="content-container">
-              <p>포켓몬</p>
+              <p>보유한 포켓몬</p>
               {/* 가진 포켓몬 map */}
             </div>
             <div className="content-container">
@@ -64,12 +65,6 @@ export default async function Home() {
             </div>
           </div>
         </div>   
-      </div>
-    )
-  }else{
-    return(
-      <div>
-        <h2 style={{textAlign:'center', fontWeight:'bold'}}>로그인이 필요한 페이지입니다</h2>
       </div>
     )
   }
