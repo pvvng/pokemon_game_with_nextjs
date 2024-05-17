@@ -25,6 +25,6 @@ export default async function (){
   }
 
 
-  return <RenderRandPokemonData 서식지1 = 'sea' 서식지2 ='waters-edge' userdata={userdata}/>
+  return <RenderRandPokemonData 서식지1 = 'grassland' 서식지2 ='urban' userdata={userdata}/>
 
 }

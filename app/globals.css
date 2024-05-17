@@ -188,16 +188,7 @@ a,h1,h2,h3,h4,h5,p,span{
 }
 
 
-.trip-bg-container{
-    width: 100%;
-    height: 380px;
-    background-image: url('../public/trip-bg/mountain-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    text-align: center;
-} 
+
 
 .wild-pokemon-img{
     width: 100%;

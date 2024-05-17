@@ -1,0 +1,43 @@
+.tripmountain {
+  width: 100%;
+  height: 380px;
+  background-image: url("../../public/trip-bg/mountain-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.tripdeep-forest {
+  width: 100%;
+  height: 380px;
+  background-image: url("../../public/trip-bg/deep-foreset-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.tripocean {
+  width: 100%;
+  height: 380px;
+  background-image: url("../../public/trip-bg/ocean-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.tripurban {
+  width: 100%;
+  height: 380px;
+  background-image: url("../../public/trip-bg/urban-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}/*# sourceMappingURL=bg.css.map */

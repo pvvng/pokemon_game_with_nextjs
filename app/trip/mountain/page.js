@@ -7,16 +7,12 @@ import LoginForm from "@/app/LoginTools/LoginForm";
 
 export default async function (){
 
-  // const db = (await connectDB).db('project-pokemon');
-  // let res = await db.collection('userdata').find().toArray();
-
   // login data 불러오기
   let session = await getServerSession(authOptions);
 
   //db userdata
   const db = (await connectDB).db('project-pokemon');
   let result = await db.collection('userdata').find().toArray();
-
 
   //db 에서 불러온 userdata 저장
   let { exist, userdata } = userCheck(result, session);

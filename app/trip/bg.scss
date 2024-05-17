@@ -1,0 +1,24 @@
+@mixin trip-bg-container ($url){
+    width: 100%;
+    height: 380px;
+    background-image: url('../../public/trip-bg/' + $url);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+} 
+// trip{path} 형태로
+.tripmountain{
+    @include trip-bg-container($url : 'mountain-bg.png');
+}
+
+.tripdeep-forest{
+    @include trip-bg-container($url : 'deep-foreset-bg.png');
+}
+.tripocean{
+    @include trip-bg-container($url : 'ocean-bg.png');
+}
+.tripurban{
+    @include trip-bg-container($url : 'urban-bg.jpg');
+}

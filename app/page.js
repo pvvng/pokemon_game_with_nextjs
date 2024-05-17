@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { connectDB } from "@/util/database";
 import LoginForm from "./LoginTools/LoginForm";
 import userCheck from "./userCheck";
+import { ObjectId } from "mongodb";
 
 export default async function Home() {
 
@@ -12,11 +13,11 @@ export default async function Home() {
 
     //db userdata
     const db = (await connectDB).db('project-pokemon');
-    let result = await db.collection('userdata').find().toArray();
+    let dbUserdata = await db.collection('userdata').find().toArray();
 
 
     //db 에서 불러온 userdata 저장
-    let { exist, userdata } = userCheck(result, session);
+    let { exist, userdata } = userCheck(dbUserdata, session);
 
     if(!exist){
         //db에 현재 로그인한 유저 정보가 없을때만 form 보여주기
@@ -24,6 +25,28 @@ export default async function Home() {
         <LoginForm session={session}/>
         )
     }
+
+    console.log(userdata._id)
+    let dbPokemon = await db.collection('pokemon').find().toArray();
+    dbPokemon.map(a => {
+        console.log(a.korean_name)
+
+        if(a.user_id === userdata._id){
+            console.log(a.user_id)
+            console.log(a.korean_name)
+        }}
+    )
+    // let userPokemon  
+    // dbPokemon.map( pk => {
+    //     console.log(`new ObjectId(${pk.user_id})`,`new ObjectId(${pk.user_id})` === userdata._id)
+
+    //     if(new ObjectId(pk.user_id) === userdata._id){
+    //         console.log(new ObjectId(pk.user_id) === userdata._id)
+    //     }
+    // });
+
+    // console.log(userPokemon)
+    // userPokemon.map(a => console.log(a._id))
   
     if(session !== null){
         return(

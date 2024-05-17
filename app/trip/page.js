@@ -33,7 +33,7 @@ export default async function Trip(){
                 <Link className='Link-none-deco marker mx-2' href={'/trip/center'}>포켓몬 센터</Link>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/mountain'}>산</Link>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/ocean'}>바다</Link>
-                <Link className='Link-none-deco marker mx-2' href={'/trip/swamp'}>늪지대</Link>
+                <Link className='Link-none-deco marker mx-2' href={'/trip/urban'}>시내</Link>
             </div>
             <div className='mb-4'>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/gym'}>체육관</Link>

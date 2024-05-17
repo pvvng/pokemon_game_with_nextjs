@@ -1,0 +1,24 @@
+// 사용시 body에서 monsterball 갯수 수정 필요
+
+import { connectDB } from "@/util/database";
+import { ObjectId } from "mongodb";
+
+export default async function handler(요청, 응답){
+
+    if(요청.method === 'PUT'){
+        let 넣을거 = {
+            name : 요청.body.name,
+            email : 요청.body.email,
+            gender : 요청.body.gender,
+            notorious : 요청.body.notorious,
+            gold : 요청.body.gold,
+            ball : 요청.body.ball
+        }
+        let db = (await connectDB).db('project-pokemon')
+        let result = await db.collection('userdata').updateOne(
+            { _id : new ObjectId(요청.body._id) }, 
+            { $set : 넣을거} 
+        );
+        응답.status(200).json('왔음');
+    }
+}

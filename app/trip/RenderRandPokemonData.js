@@ -4,11 +4,17 @@ import { useEffect, useState } from 'react';
 import fetchData from '@/app/get_pokemon.js';
 import randomGotchaNumber from '@/app/randomGotchaNumber';
 import 'animate.css';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import axios from 'axios';
+import './bg.css';
 
 export default function RenderRandPokemonData({서식지1, 서식지2, userdata}){
 
+    // let params = useParams()
+    // console.log(params)
+
     let router = useRouter();
+
 
     const [randPokemonData, setRandPokemonData] = useState([]);
     let a = randomGotchaNumber();
@@ -40,7 +46,7 @@ export default function RenderRandPokemonData({서식지1, 서식지2, userdata}
 
       if(b !== -1){
         // 전설의 포켓몬 숫자가 당첨되면 실행        
-        fetchData(b, b, setRandPokemonData)
+        fetchData(b, b, setRandPokemonData);
       }else{
         fetchData(a, a, setRandPokemonData);
       }
@@ -70,14 +76,16 @@ export default function RenderRandPokemonData({서식지1, 서식지2, userdata}
 
 function Template ({randPokemonData, router, userdata}){
 
+    let abc = usePathname()
+    let replacePath = abc.replaceAll('/','');
+
     let [ball, setBall] = useState(0);
 
     if(ball === 0){
         return(
             <div style={{marginLeft:'auto', marginRight:'auto', maxWidth:'728px'}}>
-                <div className='trip-bg-container'  style={{textAlign:'center'}}>
+                <div className={replacePath}  style={{textAlign:'center'}}>
                     <div className='animate__animated animate__bounce' style={{animationIterationCount : 'infinite'}}>
-                        {/* <img src='/trip-bg/mountain-bg.png' style={{width:'100vw', zIndex:-1, position:'absolute'}}/> */}
                         <img className='wild-pokemon-img' src={randPokemonData[0].sprites.front_default}/>
                     </div>
                 </div>
@@ -91,7 +99,11 @@ function Template ({randPokemonData, router, userdata}){
                             alert('몬스터볼이 부족합니다!');
                         }else{
                             setBall(1);
-                            // 몬스터볼 갯수 -1 하는 api필요함
+                            // user의 몬스터볼 -1
+                            let nowBall = ((userdata.ball).toString() - 1)
+                            userdata.ball = (nowBall).toString()
+                            // 변경사항 db에 업데이트
+                            axios.put('/api/update/monsterball', userdata)
                         }
                     }}>몬스터볼을 던진다</button>
                     <button className='btn btn-danger m-2'onClick={()=>{router.push('/trip')}}>그냥 지나간다</button>
@@ -101,20 +113,21 @@ function Template ({randPokemonData, router, userdata}){
         )
     }else{
         return(
-            <MonsterBall randPokemonData={randPokemonData} router={router} />
+            <MonsterBall randPokemonData={randPokemonData} router={router} userdata={userdata} />
         )
     }
-
 }
 
-function MonsterBall({randPokemonData, router}){
+function MonsterBall({randPokemonData, router, userdata}){
+
+    let abc = usePathname()
+    let replacePath = abc.replaceAll('/','');
 
     let [success, setSuccess] = useState('');
     let [ani, setAni] = useState('wobble');
     let captureRate = Math.floor((Math.random() * (100-1) + 1));
     let [context, setContext] = useState('두근두근...');
-
-
+    let [btnOp, setBtnOp] = useState('op');
 
     useEffect(()=>{
         let a = setTimeout(()=>{
@@ -136,10 +149,13 @@ function MonsterBall({randPokemonData, router}){
         if(success){
             setContext(randPokemonData[0].korean_name+' 을/를 잡았다!');
             setAni('fadeIn');
-            // 잡은 몬스터 유저 정보에 추가하는 api 필요함
+            // 잡은 포켓몬 db에 업데이트
+            axios.post('/api/post/pokemon',{ user_id : userdata._id, ...randPokemonData[0]});
+            setBtnOp('');
         }else if (success === false){
             setContext(randPokemonData[0].korean_name+' 은/는 도망가버렸다..');
             setAni('');
+            setBtnOp('');
         }else{
             setContext('두근두근...');
         }
@@ -147,7 +163,7 @@ function MonsterBall({randPokemonData, router}){
 
     return(
         <div style={{marginLeft:'auto', marginRight:'auto', maxWidth:'728px'}}>
-            <div className='trip-bg-container'  style={{textAlign:'center'}}>
+            <div className={replacePath}  style={{textAlign:'center'}}>
                 <div>
                     <img className={`animate__animated animate__${ani}`}  style={{animationIterationCount : 3}} src='/monsterball-front.png' width={'45%'}/>
                 </div>
@@ -156,7 +172,7 @@ function MonsterBall({randPokemonData, router}){
                 <p className='typewriter'>{context}</p>
             </div>
             <div style={{textAlign:'center'}}>
-                <button className='btn btn-secondary m-2' onClick={()=>{
+                <button className={`btn btn-secondary m-2 ${btnOp}`} style={{transition: 'all 1s'}} onClick={()=>{
                     router.push('/trip');
                 }}>돌아가기</button>
             </div>

@@ -1,0 +1,14 @@
+grassland 목초지
+urban 도시
+
+rough-terrain 황무지
+mountain
+
+waters-edge 물가
+sea
+
+
+forest 숲
+cave
+
+rare
