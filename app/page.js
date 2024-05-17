@@ -25,49 +25,48 @@ export default async function Home() {
         )
     }
   
+    if(session !== null){
+        return(
+        <div className="main-container">
+            <div className="row">
 
-  if(session !== null){
-    return(
-      <div className="main-container">
-        <div className="row">
+            {/* image */}
+            <div className="col-md-6" style={{background:'#eee', borderRadius:'20px', marginBottom:'10px'}}>
+                {
+                userdata.gender === '남'?
+                <img src="/조무래기-남.png" width={'100%'}/>:
+                <img src="/조무래기-여.png" width={'100%'}/>
+                }
+            </div>
 
-          {/* image */}
-          <div className="col-md-6" style={{background:'#eee', borderRadius:'20px', marginBottom:'10px'}}>
-            {
-            userdata.gender === '남'?
-            <img src="/조무래기-남.png" width={'100%'}/>:
-            <img src="/조무래기-여.png" width={'100%'}/>
-            }
-          </div>
+            {/* content */}
+            <div className="col-md-6" style={{textAlign:"center"}}>
+                <h2> {userdata.name}</h2>
+                <p style={{fontWeight:'bold'}}>[로켓단]</p>
 
-          {/* content */}
-          <div className="col-md-6" style={{textAlign:"center"}}>
-            <h2> {userdata.name}</h2>
-            <p style={{fontWeight:'bold'}}>[로켓단]</p>
-
-            <span style={{marginTop:'10px'}}>악명</span>
-            {/* 가진 악명 * 10 % */}
-            <div className="progress" role="progressbar" aria-label="Example with label" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar" style={{width: `${(userdata.notorious).toString() * 10}%`, background:'#111111'}}>{userdata.notorious}</div>
+                <span style={{marginTop:'10px'}}>악명</span>
+                {/* 가진 악명 * 10 % */}
+                <div className="progress" role="progressbar" aria-label="Example with label" aria-valuemin="0" aria-valuemax="100">
+                <div className="progress-bar" style={{width: `${(userdata.notorious).toString() * 10}%`, background:'#111111'}}>{userdata.notorious}</div>
+                </div>
+                <div className="content-container">
+                <p>보유한 포켓몬</p>
+                {/* 가진 포켓몬 map */}
+                </div>
+                <div className="content-container">
+                <p>아이템 / 골드</p>
+                {/* item map */}
+                <p>골드 : {(userdata.gold).toString()}</p>
+                <p>아이템 : </p>
+                </div>
+                <div className="content-container">
+                <p>업적</p>
+                </div>
             </div>
-            <div className="content-container">
-              <p>보유한 포켓몬</p>
-              {/* 가진 포켓몬 map */}
-            </div>
-            <div className="content-container">
-              <p>아이템 / 골드</p>
-              {/* item map */}
-              <p>골드 : {(userdata.gold).toString()}</p>
-              <p>아이템 : </p>
-            </div>
-            <div className="content-container">
-              <p>업적</p>
-            </div>
-          </div>
-        </div>   
-      </div>
-    )
-  }
+            </div>   
+        </div>
+        )
+    }
 }
 
 

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import './trip.css'
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 import { connectDB } from '@/util/database';
