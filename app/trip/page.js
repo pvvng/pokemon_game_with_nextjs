@@ -28,7 +28,7 @@ export default async function Trip(){
     return(
         <div style={{textAlign:'center'}}>
             <h2 style={{textAlign:'center', fontWeight:'bold'}} className='typewriter mb-2'>어디로 갈까?</h2>
-            <img src='/path.jpeg' width={'100%'}/>
+            <img src='/path.jpeg' width={'100%'} style={{maxWidth:'728px'}}/>
             <div className='m-4'>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/center'}>포켓몬 센터</Link>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/mountain'}>산</Link>
