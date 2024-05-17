@@ -164,9 +164,13 @@ a,h1,h2,h3,h4,h5,p,span{
 /* mainpage css */
 .main-container{
     width: 100%;
+    max-width: 728px;
     height: auto;
-    padding: 20px;
+    padding: 40px;
     background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
 }
 
 .content-container{
@@ -179,6 +183,17 @@ a,h1,h2,h3,h4,h5,p,span{
     background-color: #eee;
 }
 
+.award-container{
+    width: 100%;
+    margin-top: 20px;
+    /* height: 25%; */
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #434343;
+    color: white;
+}
+
 /* trip css */
 
 .marker{
@@ -186,9 +201,6 @@ a,h1,h2,h3,h4,h5,p,span{
     padding: 10px;
     border-radius: 10px;
 }
-
-
-
 
 .wild-pokemon-img{
     width: 100%;

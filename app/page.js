@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { connectDB } from "@/util/database";
 import LoginForm from "./LoginTools/LoginForm";
 import userCheck from "./userCheck";
-import { ObjectId } from "mongodb";
+import IllegalMarket from "./IllegalMarket";
+import Purchase from "./purchase";
 
 export default async function Home() {
 
@@ -26,67 +27,93 @@ export default async function Home() {
         )
     }
 
-    console.log(userdata._id)
-    let dbPokemon = await db.collection('pokemon').find().toArray();
-    dbPokemon.map(a => {
-        console.log(a.korean_name)
+    // 로그인 한 user의 id와 일치하는 정보를 가진 포켓몬만 불러오기
+    let dbPokemon = await db.collection('pokemon').find({user_id : userdata._id}).toArray();
 
-        if(a.user_id === userdata._id){
-            console.log(a.user_id)
-            console.log(a.korean_name)
-        }}
-    )
-    // let userPokemon  
-    // dbPokemon.map( pk => {
-    //     console.log(`new ObjectId(${pk.user_id})`,`new ObjectId(${pk.user_id})` === userdata._id)
-
-    //     if(new ObjectId(pk.user_id) === userdata._id){
-    //         console.log(new ObjectId(pk.user_id) === userdata._id)
-    //     }
-    // });
-
-    // console.log(userPokemon)
-    // userPokemon.map(a => console.log(a._id))
-  
+    let award = [0,0,0,0,0];
+    
     if(session !== null){
         return(
         <div className="main-container">
-            <div className="row">
+            {/* username */}
+            <div className="mb-3">
+                <div className="row">
+                    <span className="col-6" style={{fontSize:'2rem', fontWeight:'bold'}}>{userdata.name}</span>
+                    <div className="col-6" style={{textAlign:'right'}}>
+                        <img src="/coin.png" width={'30px'}/>
+                        <span>{(userdata.gold).toString()} ￦</span>
+                    </div>
+                </div>
 
-            {/* image */}
-            <div className="col-md-6" style={{background:'#eee', borderRadius:'20px', marginBottom:'10px'}}>
-                {
-                userdata.gender === '남'?
-                <img src="/조무래기-남.png" width={'100%'}/>:
-                <img src="/조무래기-여.png" width={'100%'}/>
-                }
-            </div>
-
-            {/* content */}
-            <div className="col-md-6" style={{textAlign:"center"}}>
-                <h2> {userdata.name}</h2>
                 <p style={{fontWeight:'bold'}}>[로켓단]</p>
 
+                {/* 악명 progressbar */}
                 <span style={{marginTop:'10px'}}>악명</span>
                 {/* 가진 악명 * 10 % */}
                 <div className="progress" role="progressbar" aria-label="Example with label" aria-valuemin="0" aria-valuemax="100">
-                <div className="progress-bar" style={{width: `${(userdata.notorious).toString() * 10}%`, background:'#111111'}}>{userdata.notorious}</div>
-                </div>
-                <div className="content-container">
-                <p>보유한 포켓몬</p>
-                {/* 가진 포켓몬 map */}
-                </div>
-                <div className="content-container">
-                <p>아이템 / 골드</p>
-                {/* item map */}
-                <p>골드 : {(userdata.gold).toString()}</p>
-                <p>아이템 : </p>
-                </div>
-                <div className="content-container">
-                <p>업적</p>
+                    <div className="progress-bar" style={{width: `${(userdata.notorious).toString()}%`, background:'#111111'}}>{userdata.notorious}</div>
                 </div>
             </div>
+
+            <div className="row" style={{alignItems:'center'}}>
+                {/* image */}
+                <div className="col-md-6" style={{background:'#eee', borderRadius:'20px', marginBottom:'10px'}}>
+                    {
+                    userdata.gender === '남'?
+                    <div>
+                        <img src="/조무래기-남.png" width={'100%'} style={{marginTop:'auto', marginBottom:'auto'}}/>
+                    </div>:
+                    <img src="/조무래기-여.png" width={'100%'}/>
+                    }
+                </div>
+
+                {/* content */}
+                <div className="col-md-6" style={{textAlign:"center"}}>
+
+                    {/* 가진 포켓몬 map */}
+                    <div className="content-container">
+                        <h5 className="card-title">보유한 포켓몬</h5>
+                        <IllegalMarket userdata={userdata} dbPokemon={dbPokemon} />
+                    </div>
+
+                    {/* item map */}
+                    <div className="content-container">
+                        <h5 className="card-title">보유 아이템</h5>
+                        <div className="row">
+                            <div className="col-6">
+                                <img src="monsterball-front.png" width={'100%'}/>
+                            </div>
+                            <div className="col-6">
+                                <img src="/상처약.png" width={'100%'}/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-6">
+                                {userdata.ball}개
+                            </div>
+                            <div className="col-6">
+                                {userdata.medi}개
+                            </div>
+                        </div>
+                        <Purchase />
+                    </div>
+                </div>
             </div>   
+            <div className="content-container">
+                <h5 className="card-title">업적</h5>
+                {
+                    award.map((a,i)=>{
+                        return(
+                            <div className="award-container" key={i}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-lock" viewBox="0 0 16 16">
+                                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
+                                </svg>
+                            </div>
+                        )
+                    })
+                }
+
+            </div>
         </div>
         )
     }

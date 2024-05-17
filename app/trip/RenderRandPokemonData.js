@@ -174,6 +174,8 @@ function MonsterBall({randPokemonData, router, userdata}){
             <div style={{textAlign:'center'}}>
                 <button className={`btn btn-secondary m-2 ${btnOp}`} style={{transition: 'all 1s'}} onClick={()=>{
                     router.push('/trip');
+                    //버튼 클릭시 soft refresh (my page에 변경된 포켓몬 데이터의 즉각적인 반영을 위해서)
+                    router.refresh();
                 }}>돌아가기</button>
             </div>
         </div>

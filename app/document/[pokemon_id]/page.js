@@ -37,7 +37,7 @@ export default function(){
   if(pokemonDetailData[0] !== undefined){
 
     return(
-      <div>
+      <div style={{maxWidth:'728px', marginLeft:'auto', marginRight:'auto'}}>
 
         {/* navbar */}
         <nav className="navbar bg-dark border-bottom border-body p-2" data-bs-theme="dark" style={{borderTopLeftRadius:'20px',borderTopRightRadius:'20px'}}>
@@ -54,7 +54,7 @@ export default function(){
         </nav>
 
         {/* main content */}
-        <div className="main-container">
+        <div className="detail-container">
           <div className="row">
             <div className="col-sm-6 pokemon-img" onClick={()=>{
               setImageStatus(imageStatus+1);

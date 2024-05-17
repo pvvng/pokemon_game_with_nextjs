@@ -3,6 +3,8 @@ import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { connectDB } from '@/util/database';
 import userCheck from '../../userCheck';
 import LoginForm from '../../LoginTools/LoginForm';
+import PurchaseBall from './purchaseBtn/PurchaseBall';
+import PurchaseMedi from './purchaseBtn/PurchaseMedi';
 
 export default async function Store(){
 
@@ -26,15 +28,14 @@ export default async function Store(){
 
     return(
         <div>
-            <img src='/store.jpg' width={'100%'}/>
+            <img src='/센터.webp' width={'100%'}/>
 
             <div className='speech-bubble'>
                 <p className='typewriter' style={{color:'white'}}>빨리 사고 나가세요~</p>
             </div>
             <div className='item-container'>
-                <button className='btn btn-secondary mx-2'>몬스터볼</button>
-                <button className='btn btn-secondary mx-2'>상처약</button>
-                <button className='btn btn-secondary mx-2'>회복</button>
+                <PurchaseBall/>
+                <PurchaseMedi/>
             </div>
         </div>
     )
