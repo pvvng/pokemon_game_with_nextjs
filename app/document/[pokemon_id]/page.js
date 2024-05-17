@@ -7,7 +7,7 @@ import './detail.css'
 import '../../badgeScss/badge.css';
 import TypeBadge from "../TypeBadge";
 import { useEffect, useState } from "react";
-import LoadingDetail from "@/app/LoadingDetail";
+import LoadingDetail from "@/app/loadingComponents/LoadingDetail";
 
 export default function(){
   const params = useParams()
@@ -17,12 +17,12 @@ export default function(){
   let [imageStatus, setImageStatus] = useState(0);
   let [statContainer, setStatContainer] = useState(0);
   let [statMention, setStatMention] = useState(['스탯창 열기', '스탯창 닫기','op'])
-  
 
   //최초 mount시 params_id번의 포켓몬 정보 불러와서 state에 저장하기
   useEffect(()=>{
-    fetchData(detailId,detailId,setPokemonDetailData);
+    fetchData(detailId, detailId, setPokemonDetailData);
   },[])
+
 
   useEffect(()=>{
     if(pokemonDetailData[0] !== undefined){

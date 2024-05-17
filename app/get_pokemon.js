@@ -1,4 +1,5 @@
 // 포켓몬 데이터 불러오는 함수
+// argument 시작 도감번호, 불러올 도감번호, state (default 형식은 빈 어레이) 변경함수
 
 import axios from "axios";
 
@@ -36,6 +37,10 @@ const fetchData = async (직전도감번호, 불러올도감번호, setPokemonDa
     const inst = await axios (response.data.species.url)
 
     // 잡을 확률 (inst.data.capture_rate)
+
+    const habitat = await axios (inst.data.habitat.url)
+    let pokemonHabitat = (habitat.data.name)
+
     
     // 종족
     const koreanGeneraType = inst.data.genera.find (genes => genes.language.name === 'ko')
@@ -60,6 +65,7 @@ const fetchData = async (직전도감번호, 불러올도감번호, setPokemonDa
         korean_genera : koreanGeneraType.genus,
         korean_egg_group : KorenEggGroups,
         korean_description : korenDescription.flavor_text,
+        habitat : pokemonHabitat,
       }
     );
   }
