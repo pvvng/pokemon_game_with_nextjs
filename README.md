@@ -1,3 +1,7 @@
+# notorious에 따라서 스크립트 보이게 하기 (스토리)
+# 대표 포켓몬 지정 기능 (대표 포켓몬은 판매 불가)
+# 전투 시스템 만들기
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
