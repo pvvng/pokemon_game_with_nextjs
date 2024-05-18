@@ -25,12 +25,11 @@ export default function PurchaseItems({userdata}){
     return totalPrice
   }
 
-  console.log(itemValue)
-
   return (
 
       <div className='item-container'>
         <h4 className='card-title'>판매 중인 상품</h4>
+        <p className="m-2">가진 금액 : {userdata.gold} 원</p>
 
         <div className="row" style={{alignItems:'center'}}>
           {itemImg.map((a,i) => 

@@ -51,7 +51,7 @@ export default async function Home() {
                 <span style={{marginTop:'10px'}}>악명</span>
                 {/* 가진 악명 * 10 % */}
                 <div className="progress" role="progressbar" aria-label="Example with label" aria-valuemin="0" aria-valuemax="100">
-                    <div className="progress-bar" style={{width: `${(userdata.notorious).toString()}%`, background:'#111111'}}>{userdata.notorious}</div>
+                    <div className="progress-bar" style={{width: `${(userdata.notorious).toString()}%`, background:'#111111'}}>{parseInt(userdata.notorious)}</div>
                 </div>
             </div>
 

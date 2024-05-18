@@ -12,7 +12,7 @@ export default function IllegalMarket({dbPokemon, userdata}){
   // 4. 변경된 props 값을 state에 저장하여 재렌더링한다
 
   let [have, setHave] = useState([]);
-  let router = useRouter()
+  let router = useRouter();
 
   // state인 have 혹은 props인 dbpokemon의 값이 변경될때마다 state 변경
   useEffect(()=>{
@@ -42,13 +42,14 @@ export default function IllegalMarket({dbPokemon, userdata}){
                 <div key={a._id} className="row m-2" style={{textAlign:'center'}}>
                   <span className="col-6" style={{marginTop:'auto', marginBottom:'auto'}}>{a.korean_name}</span>
                   <span className="col-2"></span>
-                  <button className="col-4 btn btn-secondary" onClick={(e)=>{
+                  <button className={`col-4 btn btn-secondary`} style={{transition: 'all 0.2s'}} onClick={(e)=>{
+                    // 버튼 클릭시 해당 버튼 보이지 않게 만들기
+                    e.target.style.opacity = 0;
 
                     // 해당 버튼의 포켓몬 삭제
-                    axios.delete('/api/delete/pokemon', {data : a._id})
-
-                    // userdata gold 부분에 500원 추가
-                    axios.put('/api/update/selling', userdata)
+                    axios.delete('/api/delete/pokemon', {data : a._id});
+                      // userdata gold 부분에 500원 추가
+                    axios.put('/api/update/selling', userdata);
 
                     alert('나옹 : 500원 입금했다옹');
 

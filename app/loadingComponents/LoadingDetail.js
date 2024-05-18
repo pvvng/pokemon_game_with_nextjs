@@ -5,7 +5,9 @@ export default function LoadingDetail(){
                 <div style={{textAlign:'center'}}>
                     <h2 className="typewriter" style={{fontSize:'2rem', fontWeight:'bold', color:'white'}}>LOADING...</h2>
                 </div>  
-                <img src='/pikachu-dancing.gif' width={'100%'}/>
+                <div  style={{maxWidth:'728px', marginLeft:'auto', marginRight:'auto'}}>
+                    <img src='/pikachu-dancing.gif' width={'100%'}/>
+                </div>
                 <img src='/grass.png' width={'100%'}/>
             </div>
         </div>
