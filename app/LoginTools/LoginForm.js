@@ -43,6 +43,7 @@ export default function LoginForm ({session}){
                         <input name='gold' defaultValue={500} style={{display : 'none'}}/>
                         <input name='ball' defaultValue={5} style={{display :'none'}}/>
                         <input name='medi' defaultValue={5} style={{display :'none'}}/>
+                        <input name='script' defaultValue={0} style={{display :'none'}}/>
         
                         <button type="submit" className="btn btn-primary">회원가입</button>
                     </form>

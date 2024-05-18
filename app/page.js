@@ -6,6 +6,8 @@ import LoginForm from "./LoginTools/LoginForm";
 import userCheck from "./userCheck";
 import IllegalMarket from "./IllegalMarket";
 import Purchase from "./purchase";
+import Cat from "./script/page";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
 
@@ -31,7 +33,14 @@ export default async function Home() {
     let dbPokemon = await db.collection('pokemon').find({user_id : userdata._id}).toArray();
 
     let award = [0,0,0,0,0];
-    
+
+
+    // 악명과 진행도에 따른 페이지 강제 전환
+    if(userdata.notorious === '0' && userdata.script === '0'){
+        redirect('/script');
+    }
+
+
     if(session !== null){
         return(
         <div className="main-container">
