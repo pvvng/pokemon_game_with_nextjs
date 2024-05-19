@@ -1,9 +1,10 @@
 import { getServerSession } from "next-auth";
-import Cat from "./Cat";
+import Cat from "./scriptType/Cat";
 import { connectDB } from "@/util/database";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import userCheck from "../userCheck";
 import LoginForm from "../LoginTools/LoginForm";
+import Boss from "./scriptType/Boss";
 
 
 export default async function () {
@@ -26,8 +27,15 @@ export default async function () {
         )
     }
 
-    if(userdata.script === '0'){
-      return <Cat userdata={userdata} />
-    }
     // script에 따라서 다른 컴포넌트 보여주기
+
+    if(userdata.script === '0' && userdata.notorious === '0'){
+      return <Cat userdata={userdata} />
+    }else if(userdata.script === '1' && userdata.notorious === '30'){
+      return <Boss userdata={userdata} />
+    }else{
+      return(
+        <h1 style={{textAlign:'center'}}>정상적이지 않은 접근 경로입니다.</h1>
+      )
+    }
 }

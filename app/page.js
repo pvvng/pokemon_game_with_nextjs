@@ -34,12 +34,16 @@ export default async function Home() {
 
     let award = [0,0,0,0,0];
 
-
     // 악명과 진행도에 따른 페이지 강제 전환
     if(userdata.notorious === '0' && userdata.script === '0'){
+        // 로켓단에 온걸 환영해
         redirect('/script');
+    }else if(userdata.notorious === '30' && userdata.script === '1'){
+        // 비주기의 음모
+        redirect('/script');
+    }else if (userdata.notorious === '50' && userdata.script === '3'){
+        // 국제경찰 코드네임 : 핸성
     }
-
 
     if(session !== null){
         return(
@@ -121,7 +125,6 @@ export default async function Home() {
                         )
                     })
                 }
-
             </div>
         </div>
         )

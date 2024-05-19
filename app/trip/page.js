@@ -14,7 +14,6 @@ export default async function Trip(){
     const db = (await connectDB).db('project-pokemon');
     let result = await db.collection('userdata').find().toArray();
 
-
     //db 에서 불러온 userdata 저장
     let { exist, userdata } = userCheck(result, session);
 
@@ -31,15 +30,17 @@ export default async function Trip(){
             <img src='/path.jpeg' width={'100%'} style={{maxWidth:'728px'}}/>
             <div className='m-4'>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/center'}>포켓몬 센터</Link>
+                <Link className='Link-none-deco marker mx-2' href={'/trip/DrOhS-lab'}>오박사의 연구소</Link>
+                <Link className='Link-none-deco marker mx-2' href={'/trip/gym'}>체육관</Link>
+            </div>
+
+            <div className='mb-4'>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/mountain'}>산</Link>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/ocean'}>바다</Link>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/urban'}>시내</Link>
-            </div>
-            <div className='mb-4'>
-                <Link className='Link-none-deco marker mx-2' href={'/trip/gym'}>체육관</Link>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/deep-forest'}>깊은숲</Link>
-                <Link className='Link-none-deco marker mx-2' href={'/trip/DrOhS-house'}>오박사의 집</Link>
             </div>
+
         </div>
     )
 }

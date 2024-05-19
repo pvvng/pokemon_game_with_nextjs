@@ -40,7 +40,14 @@ export default function IllegalMarket({dbPokemon, userdata}){
           have.map((a,i) => {
             return(
                 <div key={a._id} className="row m-2" style={{textAlign:'center'}}>
-                  <span className="col-6" style={{marginTop:'auto', marginBottom:'auto'}}>{a.korean_name}</span>
+                  <div className="col-6" style={{marginTop:'auto', marginBottom:'auto'}}>
+                    <img src="/bookmark-star.svg" height={'100%'} onClick={(e)=>{
+                      // alert('대표 포켓몬으로 설정되었습니다.');
+
+                      (e.target.parentElement.nextElementSibling.nextElementSibling.style.display = 'none')
+                    }}/>
+                    <span className="mx-2">{a.korean_name}</span>
+                  </div>
                   <span className="col-2"></span>
                   <button className={`col-4 btn btn-secondary`} style={{transition: 'all 0.2s'}} onClick={(e)=>{
                     // 버튼 클릭시 해당 버튼 보이지 않게 만들기
