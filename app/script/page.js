@@ -5,6 +5,8 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import userCheck from "../userCheck";
 import LoginForm from "../LoginTools/LoginForm";
 import Boss from "./scriptType/Boss";
+import Police from "./scriptType/Police";
+import VsPolice from "./scriptType/VsPolice";
 
 
 export default async function () {
@@ -31,9 +33,14 @@ export default async function () {
 
     if(userdata.script === '0' && userdata.notorious === '0'){
       return <Cat userdata={userdata} />
-    }else if(userdata.script === '1' && userdata.notorious === '30'){
+    }else if(userdata.script === '1' && userdata.notorious >= '30'){
       return <Boss userdata={userdata} />
-    }else{
+    }else if(userdata.script === '3' && userdata.notorious >= '50'){
+      return<Police userdata={userdata}/>
+    }else if(userdata.script === '4' && userdata.notorious >= '55'){
+      return<VsPolice userdata={userdata}/>
+    }
+    else{
       return(
         <h1 style={{textAlign:'center'}}>정상적이지 않은 접근 경로입니다.</h1>
       )

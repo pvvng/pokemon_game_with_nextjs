@@ -40,7 +40,7 @@ export default function Boss({userdata}) {
   }, [contextState]);
 
   return (
-    <div className={componentStatus} style={{ width: '100%', height: '100vh', background: 'white', position: 'fixed', top: 0 }}>
+    <div className={componentStatus} style={{ width: '100%', height: '100vh', background: 'white', position: 'absolute', top: 0 }}>
       <div style={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}>
         <p style={{ textAlign: "center", marginTop: '20px' }}>말풍선을 터치하세요</p>
         <div style={{display:'flex', justifyContent:'center'}}>

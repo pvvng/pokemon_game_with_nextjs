@@ -38,11 +38,15 @@ export default async function Home() {
     if(userdata.notorious === '0' && userdata.script === '0'){
         // 로켓단에 온걸 환영해
         redirect('/script');
-    }else if(userdata.notorious === '30' && userdata.script === '1'){
+    }else if(userdata.notorious >= '30' && userdata.script === '1'){
         // 비주기의 음모
         redirect('/script');
-    }else if (userdata.notorious === '50' && userdata.script === '3'){
+    }else if (userdata.notorious >= '50' && userdata.script === '3'){
         // 국제경찰 코드네임 : 핸성
+        redirect('/script');
+    }else if (userdata.notorious >= '55' && userdata.script == '4'){
+        // 핸섬과의 배틀
+        redirect('/script');
     }
 
     if(session !== null){

@@ -4,25 +4,23 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function Cat({userdata}) {
+export default function Police({userdata}) {
   let context =([
-    '  반갑다옹 신입. 난 로켓단의 귀염둥이 마스코트 나옹이다옹.',
-    ' 이번 신입 교육은 내가 맡게 되었으니 잘 들으라옹.',
-    ` 로켓단이 뭐하는 곳이냐고? 
-    그렇게 물으신다면 대답해 드리는게 인지상정이다옹.`,
-    ` 우리 로켓단은 이 세계의 파괴를 막기위해,
-    이 세계의 평화를 지키기 위해,
-    사랑과 진실 어둠을 뿌리고 다닌다옹.`,
-    ' 신입인 네가 할 일은 포켓몬을 잡아서 마켓에 파는 것이다옹.',
-    ` 다만 국제 경찰 녀석들이 찾아올 수도 있으니까,
-    강한 포켓몬 한 마리는 '대표 포켓몬' 으로 등록하고 팔지 말라옹.`,
-    ' 몬스터볼 5개와 상처약 5개를 줄테니 열심히 해보라옹.',
+    `  반갑다. ${userdata.name}. 뭐 하나 물어보지.`,
+    ' 내가 누구냐고? 나는 세계를 누비며 활약하는 국제경찰의 일원이다.',
+    ` 이름은... 아니지, 너에게는 코드네임을 알려주마.`,
+    ` 그래, 코드네임은 핸섬! 모두들 그렇게 부른다!`,
+    ` 최근 오박사의 연구소에서 포켓몬 도난 사건이 있었지.
+    또한, 이 지방에서의 포켓몬 밀매 사건이 급증했다.`,
+    ' 네가 범인라는 말은 아니야. 진정하라고.',
+    ' 오늘은 여기까지 하지. 다시 만날 일이 없었으면 좋겠군.'
   ]);
 
   let [contextState, setContextState] = useState(0);
   let [typedText, setTypedText] = useState('');
   let [componentStatus, setComponentStatus] = useState('');
   let router = useRouter();
+  let [codeName, setCodeName] = useState('???')
 
   useEffect(() => {
     let interval;
@@ -44,11 +42,20 @@ export default function Cat({userdata}) {
     return () => clearInterval(interval); // 정리 함수로 interval 클리어
   }, [contextState]);
 
+  useEffect(()=>{
+    console.log(contextState)
+    if (contextState === 3){
+      setCodeName('핸섬');
+    }
+  },[contextState])
+
   return (
     <div className={componentStatus} style={{ width: '100%', height: '100vh', background: 'white', position: 'absolute', top: 0 }}>
       <div style={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}>
         <p style={{ textAlign: "center", marginTop: '20px' }}>말풍선을 터치하세요</p>
-        <img src='/나옹이.webp' width={'100%'} />
+        <div style={{display:'flex', justifyContent:'center'}}>
+          <img src='/국제경찰.webp' width={'25%'} style={{marginLeft:'auto', marginRight:'auto'}}/>
+        </div>
 
         <div className='speech-bubble' style={{ cursor: 'pointer' }} onClick={() => {
           setContextState((prevState) => (prevState + 1)); 
@@ -57,10 +64,12 @@ export default function Cat({userdata}) {
             // user의 script + 1 하는 api
             axios.put('/api/update/script', userdata);
             router.push('/');
+            // 마이페이지를 refresh하는 목적임. 마이페이지가 refresh되지 않으면
+            // user의 notorious나 script가 업데이트 되지 않아서 스크립트가 계속 반복되기 때문임
             router.refresh();
           }
         }}>
-          <p className='card-title' style={{ color: 'white' }}>[나옹]</p>
+          <p className='card-title' style={{ color: 'white' }}>[{codeName}]</p>
           <p style={{ color: 'white', whiteSpace: 'pre-wrap' }}>{typedText}</p>
         </div>
       </div>

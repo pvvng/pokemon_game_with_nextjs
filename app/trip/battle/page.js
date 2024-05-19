@@ -1,40 +1,54 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { getServerSession } from 'next-auth';
 import './battle.css'
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import { connectDB } from '@/util/database';
+import userCheck from '@/app/userCheck';
+import LoginForm from '@/app/LoginTools/LoginForm';
+import MyPokemon from './MyPokemon';
+import fetchData from '@/app/get_pokemon';
 
-export default function Battle (){
+export default async function Battle (){
 
-    return(
-        <div className='container'>
-            <div className='main-container'>
-                <div className='inner-container'>
-                    <div className='row-container row'>
-                        <div className='col-6'></div>
-                        <div className='col-6' style={{backgroundColor:'#eee'}}>
-                            상대 포켓몬
-                        </div>
-                    </div>
-                </div>
-                <div className='inner-container'>
-                    <div className='row-container row'>
-                        <div className='col-6' style={{backgroundColor:'#eee'}}>
-                            내 포켓몬
-                        </div>
-                        <div className='col-6'></div>
-                    </div>
-                </div>
+    // login data 불러오기
+    let session = await getServerSession(authOptions);
+
+    //db userdata
+    const db = (await connectDB).db('project-pokemon');
+    let dbUserdata = await db.collection('userdata').find().toArray();
+
+
+    //db 에서 불러온 userdata 저장
+    let { exist, userdata } = userCheck(dbUserdata, session);
+
+    if(!exist){
+        //db에 현재 로그인한 유저 정보가 없을때만 form 보여주기
+        return(
+        <LoginForm session={session}/>
+        )
+    }
+
+    // 로그인 한 user의 id와 일치하는 정보를 가진 포켓몬만 불러오기
+    let dbPokemon = await db.collection('pokemon').find({user_id : userdata._id}).toArray();
+
+
+    if(userdata.notorious >= '55' && userdata.script === '4'){
+        // 핸섬과의 전투
+        let enemy = 'h';
+
+        return(
+            <div className='container'>
+                <MyPokemon dbPokemon={dbPokemon} enemy={enemy}/>
             </div>
-
-            <div className='content-container'>
-                <div className='row'>
-                    <div className='col-3'>버튼1</div>
-                    <div className='col-3'>버튼2</div>
-                    <div className='col-3'>버튼3</div>
-                    <div className='col-3'>버튼4</div>
-                </div>
-                <div>
-                    버튼 내용에 따른 컨텐츠
-                </div>
+        )
+    }else{
+        // 관장과의 전투
+        let enemy = 'm'
+        return(
+            <div className='container'>
+                <MyPokemon dbPokemon={dbPokemon} enemy={enemy}/>
             </div>
-        </div>
-    )
+        )
+    }
+
+
 }
