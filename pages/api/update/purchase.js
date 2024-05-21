@@ -4,6 +4,7 @@ import { ObjectId } from "mongodb";
 export default async function (요청, 응답){
   if( 요청.method === 'PUT'){
 
+
     let 넣을거 = {...요청.body};
     delete 넣을거._id;
 

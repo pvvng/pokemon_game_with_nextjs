@@ -2,13 +2,13 @@
 
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function PurchaseItems({userdata}){
 
-  let itemImg = ['/monsterball-front.png','/상처약.png'];
-  let [itemValue, setItemValue] = useState([0,0]);
-  let itemPrice = [350 , 150];
+  let itemImg = ['/몬스터볼.webp','/슈퍼볼.webp','/하이퍼볼.webp','/마스터볼.webp'];
+  let [itemValue, setItemValue] = useState([0,0,0,0]);
+  let itemPrice = [200, 400, 1000, 5000];
   let router = useRouter();
 
   function 변경함수(i,변경할값){
@@ -33,7 +33,7 @@ export default function PurchaseItems({userdata}){
 
         <div className="row" style={{alignItems:'center'}}>
           {itemImg.map((a,i) => 
-            <div className="col-md-6" key={i}>
+            <div className="col-sm-6" key={i}>
               <div className="row" style={{alignItems:'center'}}>
 
                 {/* 이미지 div */}
@@ -79,15 +79,17 @@ export default function PurchaseItems({userdata}){
           // 구매하는 item 의 가격만큼 userdata 수정해서 보내기
           보낼거.gold = (parseInt(보낼거.gold) - a).toString();
           보낼거.ball = (parseInt(보낼거.ball) + itemValue[0]).toString();
-          보낼거.medi = (parseInt(보낼거.medi) + itemValue[1]).toString();
+          보낼거.sball = (parseInt(보낼거.sball) + itemValue[1]).toString();
+          보낼거.hball = (parseInt(보낼거.hball) + itemValue[2]).toString();
+          보낼거.mball = (parseInt(보낼거.mball) + itemValue[3]).toString();
 
           if(a > parseInt(userdata.gold)){
             // user가 가진 골드가 부족한 경우
             alert('간호순 : 돈 없으면 나가세요~');
           }else{
             axios.put('/api/update/purchase', 보낼거);
-            setItemValue([0,0]);
-            alert('간호순 : 구매 감사합니다 고갱님~')
+            setItemValue([0,0,0,0]);
+            alert('간호순 : 구매 감사합니다 고갱님~');
             router.refresh();
           }
 

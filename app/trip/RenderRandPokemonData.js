@@ -54,13 +54,13 @@ export default function RenderRandPokemonData({서식지1, 서식지2, userdata}
     },[])
 
 
-    // 불러온 포켓몬의 서식지가 mountaion 이나 rough-terrain이 아니라면 데이터 다시 받아오기
+    //서식지가 제대로 맞춰졌을때만 html 보여주기. 이외에는 로딩중  
+
     if(randPokemonData.length !== 0){
       if(randPokemonData[0].habitat !== 서식지1 && randPokemonData[0].habitat !== 서식지2 && randPokemonData[0].habitat !== 'rare'){
         fetchData(a, a, setRandPokemonData)
       }
   
-      //서식지가 제대로 맞춰졌을때만 html 보여주기. 이외에는 로딩중  
       if(randPokemonData[0].habitat === 서식지1 || randPokemonData[0].habitat === 서식지2 || randPokemonData[0].habitat === 'rare'){
         return(
             
@@ -78,10 +78,29 @@ function Template ({randPokemonData, router, userdata}){
 
     let abc = usePathname()
     let replacePath = abc.replaceAll('/','');
+    let [whichBall, setWhichBall] = useState('');  
 
     let [ball, setBall] = useState(0);
 
-    if(ball === 0){
+    function throwBall(어떤공){
+        // 인수는 공 타입
+        let ballType = userdata[어떤공];
+        // 유저의 몬스터볼 갯수가 0개면 몬스터볼 못 던지게 막아야함
+        if((ballType).toString() <= 0){
+            alert('몬스터볼이 부족합니다!');
+        }else{
+            setBall(1);
+            setWhichBall(어떤공);
+            // user의 몬스터볼 -1
+            let nowBall = ((ballType).toString() - 1)
+            userdata[어떤공] = (nowBall).toString()
+            // 변경사항 db에 업데이트
+            axios.put('/api/update/monsterball', userdata)
+        }
+    }
+
+    if(ball === 0 && whichBall === ''){
+        // 공을 던지지 않았을때 보여주는 html
         return(
             <div style={{marginLeft:'auto', marginRight:'auto', maxWidth:'728px'}}>
                 <div className={replacePath}  style={{textAlign:'center'}}>
@@ -93,32 +112,52 @@ function Template ({randPokemonData, router, userdata}){
                     <p className='typewriter'>야생의 <span className='card-title' style={{fontSize:'1.3rem'}}>{randPokemonData[0].korean_name}</span> 이/가 나타났다!</p>
                 </div>
                 <div style={{textAlign:'center'}}>
-                    <button className='btn btn-primary m-2' onClick={()=>{
-                        // 유저의 몬스터볼 갯수가 0개면 몬스터볼 못 던지게 막아야함
-                        if((userdata.ball).toString() <= 0){
-                            alert('몬스터볼이 부족합니다!');
-                        }else{
-                            setBall(1);
-                            // user의 몬스터볼 -1
-                            let nowBall = ((userdata.ball).toString() - 1)
-                            userdata.ball = (nowBall).toString()
-                            // 변경사항 db에 업데이트
-                            axios.put('/api/update/monsterball', userdata)
-                        }
-                    }}>몬스터볼을 던진다</button>
+                    <button className='btn btn-primary m-2' >몬스터볼을 던진다</button>
                     <button className='btn btn-danger m-2'onClick={()=>{router.push('/trip')}}>그냥 지나간다</button>
-                    <p>몬스터볼 : {userdata.ball} 개</p>
+                    <div className='row'>
+                        <div className='col-3' 
+                        onClick={()=>{
+                            throwBall('ball');
+                        }}>
+                            <img src='/몬스터볼.webp' width={'100%'}/>
+                            <p>몬스터볼 : {userdata.ball} 개</p>
+                        </div>
+
+                        <div className='col-3' 
+                        onClick={()=>{
+                            throwBall('sball');
+                        }}>
+                            <img src='/슈퍼볼.webp' width={'100%'}/>
+                            <p>슈퍼볼 : {userdata.sball} 개</p>
+                        </div>
+                        <div className='col-3' 
+                        onClick={()=>{
+                            throwBall('hball');
+                        }}>
+                            <img src='/하이퍼볼.webp' width={'100%'}/>
+                            <p>하이퍼볼 : {userdata.hball} 개</p>
+                        </div>
+                        <div className='col-3' 
+                        onClick={()=>{
+                            throwBall('mball');
+                        }}>
+                            <img src='/마스터볼.webp' width={'100%'}/>
+                            <p>마스터볼 : {userdata.mball} 개</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
     }else{
+        // 공을 던졌을 때 보여주는 html
         return(
-            <MonsterBall randPokemonData={randPokemonData} router={router} userdata={userdata} />
+            <MonsterBall whichBall={whichBall} randPokemonData={randPokemonData} router={router} userdata={userdata} />
         )
     }
 }
 
-function MonsterBall({randPokemonData, router, userdata}){
+
+function MonsterBall({whichBall, randPokemonData, router, userdata}){
 
     let abc = usePathname()
     let replacePath = abc.replaceAll('/','');
@@ -132,9 +171,25 @@ function MonsterBall({randPokemonData, router, userdata}){
     useEffect(()=>{
         let a = setTimeout(()=>{
 
-            console.log(randPokemonData[0].korean_capture_rate, '결과 :' + captureRate)
+            let 잡을확률 = 0;
 
-            if(captureRate <= randPokemonData[0].korean_capture_rate){
+            switch (whichBall){
+                case 'ball':
+                    잡을확률 = parseInt(randPokemonData[0].korean_capture_rate) * 1;
+                    break;
+                case 'sball':
+                    잡을확률 = parseInt(randPokemonData[0].korean_capture_rate) * 1.5;
+                    break;
+                case 'hball':
+                    잡을확률 = parseInt(randPokemonData[0].korean_capture_rate) * 2;
+                    break;
+                case 'mball':
+                    잡을확률 = parseInt(randPokemonData[0].korean_capture_rate) * 100;
+                    break;
+            }
+            console.log(randPokemonData[0].korean_capture_rate, 잡을확률, '결과 :' + captureRate);
+
+            if(captureRate <= 잡을확률){
                 setSuccess(true);
             }else{
                 setSuccess(false);

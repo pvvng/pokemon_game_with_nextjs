@@ -6,8 +6,8 @@ import LoginForm from "./LoginTools/LoginForm";
 import userCheck from "./userCheck";
 import IllegalMarket from "./IllegalMarket";
 import Purchase from "./purchase";
-import Cat from "./script/page";
 import { redirect } from "next/navigation";
+import BallDescription from "./BallDescription";
 
 export default async function Home() {
 
@@ -38,14 +38,8 @@ export default async function Home() {
     if(userdata.notorious === '0' && userdata.script === '0'){
         // 로켓단에 온걸 환영해
         redirect('/script');
-    }else if(userdata.notorious >= '30' && userdata.script === '1'){
+    }else if(parseInt(userdata.notorious) >= 50 && userdata.script === '1'){
         // 비주기의 음모
-        redirect('/script');
-    }else if (userdata.notorious >= '50' && userdata.script === '3'){
-        // 국제경찰 코드네임 : 핸성
-        redirect('/script');
-    }else if (userdata.notorious >= '55' && userdata.script == '4'){
-        // 핸섬과의 배틀
         redirect('/script');
     }
 
@@ -96,22 +90,7 @@ export default async function Home() {
                     {/* item map */}
                     <div className="content-container">
                         <h5 className="card-title">보유 아이템</h5>
-                        <div className="row">
-                            <div className="col-6">
-                                <img src="monsterball-front.png" width={'100%'}/>
-                            </div>
-                            <div className="col-6">
-                                <img src="/상처약.png" width={'100%'}/>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-6">
-                                {userdata.ball}개
-                            </div>
-                            <div className="col-6">
-                                {userdata.medi}개
-                            </div>
-                        </div>
+                        <BallDescription userdata={userdata} />
                         <Purchase />
                     </div>
                 </div>
