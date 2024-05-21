@@ -112,7 +112,6 @@ function Template ({randPokemonData, router, userdata}){
                     <p className='typewriter'>야생의 <span className='card-title' style={{fontSize:'1.3rem'}}>{randPokemonData[0].korean_name}</span> 이/가 나타났다!</p>
                 </div>
                 <div style={{textAlign:'center'}}>
-                    <button className='btn btn-primary m-2' >몬스터볼을 던진다</button>
                     <button className='btn btn-danger m-2'onClick={()=>{router.push('/trip')}}>그냥 지나간다</button>
                     <div className='row'>
                         <div className='col-3' 
