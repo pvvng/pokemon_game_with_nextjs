@@ -32,16 +32,7 @@ export default async function Home() {
     // 로그인 한 user의 id와 일치하는 정보를 가진 포켓몬만 불러오기
     let dbPokemon = await db.collection('pokemon').find({user_id : userdata._id}).toArray();
 
-    let award = [0,0,0,0,0];
-
-    // 악명과 진행도에 따른 페이지 강제 전환
-    if(userdata.notorious === '0' && userdata.script === '0'){
-        // 로켓단에 온걸 환영해
-        redirect('/script');
-    }else if(parseInt(userdata.notorious) >= 50 && userdata.script === '1'){
-        // 비주기의 음모
-        redirect('/script');
-    }
+    scriptHandler(userdata);
 
     if(session !== null){
         return(
@@ -84,6 +75,7 @@ export default async function Home() {
                     {/* 가진 포켓몬 map */}
                     <div className="content-container">
                         <h5 className="card-title">보유한 포켓몬</h5>
+                        
                         <IllegalMarket userdata={userdata} dbPokemon={dbPokemon} />
                     </div>
 
@@ -95,24 +87,26 @@ export default async function Home() {
                     </div>
                 </div>
             </div>   
-            <div className="content-container">
-                <h5 className="card-title">업적</h5>
-                {
-                    award.map((a,i)=>{
-                        return(
-                            <div className="award-container" key={i}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-lock" viewBox="0 0 16 16">
-                                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
-                                </svg>
-                            </div>
-                        )
-                    })
-                }
-            </div>
         </div>
         )
     }
 }
 
+function scriptHandler(userdata){
+    if(userdata.notorious === '0' && userdata.script === '0'){
+        // 로켓단에 온걸 환영해
+        redirect('/script');
+    }else if(parseInt(userdata.notorious) >= 50 && userdata.script === '1'){
+        // 비주기의 음모
+        redirect('/script');
+    }else if (parseInt(userdata.notorious) >= 100 && userdata.script === '3'){
+        // 진짜 유명한 나쁜 놈
+        redirect('/script');
+    }
+    else if (parseInt(userdata.notorious) >= 100 && userdata.script === '4'){
+        // 엔딩
+        redirect('/script');
+    }
+}
 
 

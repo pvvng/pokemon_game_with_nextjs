@@ -5,7 +5,8 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import userCheck from "../userCheck";
 import LoginForm from "../LoginTools/LoginForm";
 import Boss from "./scriptType/Boss";
-
+import Hero from "./scriptType/Hero";
+import LongTimeAgo from "./scriptType/LongTimeAge";
 
 export default async function () {
 
@@ -33,6 +34,10 @@ export default async function () {
       return <Cat userdata={userdata} />
     }else if(userdata.script === '1' && parseInt(userdata.notorious) >= 50){
       return <Boss userdata={userdata} />
+    }else if(userdata.script === '3' && parseInt(userdata.notorious) >= 100){
+      return <Hero userdata={userdata} />
+    }else if (userdata.script === '4' && parseInt(userdata.notorious) >= 100){
+      return <LongTimeAgo userdata={userdata} />
     }
     else{
       return(
