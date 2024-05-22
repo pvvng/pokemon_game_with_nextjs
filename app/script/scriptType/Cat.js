@@ -46,7 +46,7 @@ export default function Cat({userdata}) {
     <div className={componentStatus} style={{ width: '100%', height: '100vh', background: 'white', position: 'absolute', top: 0 }}>
       <div style={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}>
         <p style={{ textAlign: "center", marginTop: '20px' }}>말풍선을 터치하세요</p>
-        <img src='/나옹이.webp' width={'100%'} />
+        <img src='/images/나옹이.webp' width={'100%'} />
 
         <div className='speech-bubble' style={{ cursor: 'pointer' }} onClick={() => {
           setContextState((prevState) => (prevState + 1)); 

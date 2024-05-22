@@ -30,7 +30,7 @@ export default async function (){
   }else if(userdata.script >= 3){
     return (
       <div style = {{maxWidth:'720px', marginLeft:'auto', marginRight:'auto'}}>
-        <img src='/dr.oh.webp' width={'100%'}/>
+        <img src='/images/dr.oh.webp' width={'100%'}/>
   
         <div className='speech-bubble'>
             <p className='card-title' style={{color:'white'}}>[오박사]</p>
@@ -41,7 +41,7 @@ export default async function (){
   }else{
     return (
       <div style = {{maxWidth:'720px', marginLeft:'auto', marginRight:'auto'}}>
-        <img src='/dr.oh.webp' width={'100%'}/>
+        <img src='/images/dr.oh.webp' width={'100%'}/>
   
         <div className='speech-bubble'>
             <p className='card-title' style={{color:'white'}}>[오박사]</p>

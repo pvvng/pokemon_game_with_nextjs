@@ -115,7 +115,7 @@ function Template ({randPokemonData, router, userdata}){
                         onClick={()=>{
                             throwBall('ball');
                         }}>
-                            <img src='/몬스터볼.webp' width={'100%'}/>
+                            <img src='/images/몬스터볼.webp' width={'100%'}/>
                             <p>몬스터볼 : {userdata.ball} 개</p>
                         </div>
 
@@ -123,21 +123,21 @@ function Template ({randPokemonData, router, userdata}){
                         onClick={()=>{
                             throwBall('sball');
                         }}>
-                            <img src='/슈퍼볼.webp' width={'100%'}/>
+                            <img src='/images/슈퍼볼.webp' width={'100%'}/>
                             <p>슈퍼볼 : {userdata.sball} 개</p>
                         </div>
                         <div className='col-3' 
                         onClick={()=>{
                             throwBall('hball');
                         }}>
-                            <img src='/하이퍼볼.webp' width={'100%'}/>
+                            <img src='/images/하이퍼볼.webp' width={'100%'}/>
                             <p>하이퍼볼 : {userdata.hball} 개</p>
                         </div>
                         <div className='col-3' 
                         onClick={()=>{
                             throwBall('mball');
                         }}>
-                            <img src='/마스터볼.webp' width={'100%'}/>
+                            <img src='/images/마스터볼.webp' width={'100%'}/>
                             <p>마스터볼 : {userdata.mball} 개</p>
                         </div>
                     </div>
@@ -217,7 +217,7 @@ function MonsterBall({whichBall, randPokemonData, router, userdata}){
         <div style={{marginLeft:'auto', marginRight:'auto', maxWidth:'728px'}}>
             <div className={replacePath}  style={{textAlign:'center'}}>
                 <div>
-                    <img className={`animate__animated animate__${ani}`}  style={{animationIterationCount : 3}} src='/monsterball-front.png' width={'45%'}/>
+                    <img className={`animate__animated animate__${ani}`}  style={{animationIterationCount : 3}} src='/images/monsterball-front.png' width={'45%'}/>
                 </div>
             </div>
             <div className='context-box'>

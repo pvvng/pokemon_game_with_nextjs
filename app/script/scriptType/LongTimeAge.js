@@ -50,7 +50,7 @@ export default function LongTimeAge({userdata}) {
       <div style={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}>
         <p style={{ textAlign: "center", marginTop: '20px' }}>말풍선을 터치하세요</p>
         <div style={{display:'flex', justifyContent:'center'}}>
-          <img src='/우승.png' width={'100%'} className={hiddenImage} style={{marginLeft:'auto', marginRight:'auto',transition:'all 1s'}}/>
+          <img src='/images/우승.png' width={'100%'} className={hiddenImage} style={{marginLeft:'auto', marginRight:'auto',transition:'all 1s'}}/>
         </div>
 
         <div className='speech-bubble' style={{ cursor: 'pointer' }} onClick={() => {

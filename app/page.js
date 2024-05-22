@@ -42,7 +42,7 @@ export default async function Home() {
                 <div className="row">
                     <span className="col-6" style={{fontSize:'2rem', fontWeight:'bold'}}>{userdata.name}</span>
                     <div className="col-6" style={{textAlign:'right'}}>
-                        <img src="/coin.png" width={'30px'}/>
+                        <img src="/images/coin.png" width={'30px'}/>
                         <span>{(userdata.gold).toString()} ￦</span>
                     </div>
                 </div>
@@ -63,9 +63,9 @@ export default async function Home() {
                     {
                     userdata.gender === '남'?
                     <div>
-                        <img src="/조무래기-남.png" width={'100%'} style={{marginTop:'auto', marginBottom:'auto'}}/>
+                        <img src="/images/조무래기-남.png" width={'100%'} style={{marginTop:'auto', marginBottom:'auto'}}/>
                     </div>:
-                    <img src="/조무래기-여.png" width={'100%'}/>
+                    <img src="/images/조무래기-여.png" width={'100%'}/>
                     }
                 </div>
 

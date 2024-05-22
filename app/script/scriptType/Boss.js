@@ -44,7 +44,7 @@ export default function Boss({userdata}) {
       <div style={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}>
         <p style={{ textAlign: "center", marginTop: '20px' }}>말풍선을 터치하세요</p>
         <div style={{display:'flex', justifyContent:'center'}}>
-          <img src='/비주기.webp' width={'50%'} style={{marginLeft:'auto', marginRight:'auto'}}/>
+          <img src='/images/비주기.webp' width={'50%'} style={{marginLeft:'auto', marginRight:'auto'}}/>
         </div>
 
         <div className='speech-bubble' style={{ cursor: 'pointer' }} onClick={() => {

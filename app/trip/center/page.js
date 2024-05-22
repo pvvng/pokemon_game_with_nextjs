@@ -27,7 +27,7 @@ export default async function Store(){
 
     return(
         <div style = {{maxWidth:'720px', marginLeft:'auto', marginRight:'auto'}}>
-            <img src='/센터.webp' width={'100%'}/>
+            <img src='/images/센터.webp' width={'100%'}/>
 
             <div className='speech-bubble'>
                 <p className='card-title' style={{color:'white'}}>[간호순]</p>
