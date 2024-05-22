@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function PurchaseItems({userdata}){
 
-  let itemImg = ['/몬스터볼.webp','/슈퍼볼.webp','/하이퍼볼.webp','/마스터볼.webp'];
+  let itemImg = ['/images/몬스터볼.webp','/images/슈퍼볼.webp','/images/하이퍼볼.webp','/images/마스터볼.webp'];
   let [itemValue, setItemValue] = useState([0,0,0,0]);
   let itemPrice = [200, 400, 1000, 5000];
   let router = useRouter();

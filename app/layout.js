@@ -24,7 +24,7 @@ export default async function RootLayout({ children }) {
         <nav className="navbar bg-body-tertiary mb-5" data-bs-theme="dark">
           <div className="container">
             <Link className="navbar-brand" href="/">
-              <img src="/icon.png" alt="pokemon" width="30"/>
+              <img src="/images/icon.png" alt="pokemon" width="30"/>
             </Link>
             <Link href='/' className="Link-none-deco">마이페이지</Link>
             <Link href='/document' className="Link-none-deco">도감</Link>

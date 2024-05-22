@@ -32,7 +32,7 @@ a,h1,h2,h3,h4,h5,p,span{
 
 /* loading component css */
 .sky-bg{
-    background: url('../public/sky.jpg');
+    background: url('../public/images/sky.jpg');
     background-repeat: repeat;
     background-size: contain;
 }
@@ -217,12 +217,22 @@ a,h1,h2,h3,h4,h5,p,span{
     font-size: 1.1rem;
 }
 
+/* 포켓몬 도감 css */
+
 .dont-have{
     opacity: 0.5;
 }
 
 .have{
     opacity: 1;
+}
+
+/* trip page 몬스터볼 animation */
+.ball-ani{
+    transition: all 0.5s;
+}
+.ball-ani:hover{
+    width: 90%;
 }
 
 /* !!!!!!!!!!!!!!!!!!!!! */

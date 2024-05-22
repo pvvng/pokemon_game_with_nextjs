@@ -31,7 +31,7 @@ export default function ScriptComponent ({userdata}) {
             monsterball.map(a => {
               return(
                 <div className="col-4" style={{transition:'all 1s'}} key={a} >
-                  <img src='/monsterball-front.png' width={'100%'} onClick={(e)=>{
+                  <img src='/images/monsterball-front.png' width={'100%'} onClick={(e)=>{
                     e.target.style.display = 'none';
                     e.target.nextElementSibling.style.display='';
                     if(a === 149 || a === 132 || a === 130){

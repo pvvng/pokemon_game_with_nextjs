@@ -4,17 +4,14 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function Cat({userdata}) {
+export default function Hero({userdata}) {
   let context =([
-    '  반갑다옹 신입. 난 로켓단의 귀염둥이 마스코트 나옹이다옹.',
-    ' 이번 신입 교육은 내가 맡게 되었으니 잘 들으라옹.',
-    ` 로켓단이 뭐하는 곳이냐고? 
-    그렇게 물으신다면 대답해 드리는게 인지상정이다옹.`,
-    ` 우리 로켓단은 이 세계의 파괴를 막기위해,
-    이 세계의 평화를 지키기 위해,
-    사랑과 진실 어둠을 뿌리고 다닌다옹.`,
-    ' 신입인 네가 할 일은 포켓몬을 잡아서 마켓에 파는 것이다옹.',
-    ' 몬스터볼 5개와 슈퍼볼 1개를 줄테니 열심히 해보라옹.',
+    '  네가 그 유명한 포켓몬 밀매업자야?',
+    ` 난 한지우! 이 세상에서 가장 훌륭한
+    최강의 포켓몬 마스터가 될 사람이지!`,
+    ` 우리의 친구인 포켓몬을 돈벌이로 취급하는 널 용서할 수 없어!`,
+    ' 배틀하자! 본때를 보여주지!',
+    ` 너로 정했다!! 가랏, 피카츄!!`
   ]);
 
   let [contextState, setContextState] = useState(0);
@@ -46,7 +43,9 @@ export default function Cat({userdata}) {
     <div className={componentStatus} style={{ width: '100%', height: '100vh', background: 'white', position: 'absolute', top: 0 }}>
       <div style={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}>
         <p style={{ textAlign: "center", marginTop: '20px' }}>말풍선을 터치하세요</p>
-        <img src='/images/나옹이.webp' width={'100%'} />
+        <div style={{display:'flex', justifyContent:'center'}}>
+          <img src='/images/지우.webp' width={'50%'} style={{marginLeft:'auto', marginRight:'auto'}}/>
+        </div>
 
         <div className='speech-bubble' style={{ cursor: 'pointer' }} onClick={() => {
           setContextState((prevState) => (prevState + 1)); 
@@ -54,11 +53,13 @@ export default function Cat({userdata}) {
             setComponentStatus('op');
             // user의 script + 1 하는 api
             axios.put('/api/update/script', userdata);
-            router.push('/');
+            router.push('/script');
+            // 마이페이지를 refresh하는 목적임. 마이페이지가 refresh되지 않으면
+            // user의 notorious나 script가 업데이트 되지 않아서 스크립트가 계속 반복되기 때문임
             router.refresh();
           }
         }}>
-          <p className='card-title' style={{ color: 'white' }}>[나옹]</p>
+          <p className='card-title' style={{ color: 'white' }}>[한지우]</p>
           <p style={{ color: 'white', whiteSpace: 'pre-wrap' }}>{typedText}</p>
         </div>
       </div>

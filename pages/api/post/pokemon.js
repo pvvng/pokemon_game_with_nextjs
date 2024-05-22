@@ -5,8 +5,6 @@ export default async function handler (요청, 응답){
 
     if(요청.method === 'POST'){
         let 넣을거 = {...요청.body};
-        console.log(넣을거.id)
-        console.log(요청.body.user_id)
 
         넣을거.user_id = new ObjectId (요청.body.user_id)
         const db =(await connectDB).db('project-pokemon');

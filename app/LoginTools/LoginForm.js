@@ -4,7 +4,7 @@ export default function LoginForm ({session}){
     if(session !== null){
         return(
             <div className="login-form-outer-container">
-                <div className='login-form-inner-container'>
+                <div className='login-form-inner-container p-5' style={{maxWidth:'728px', marginLeft:'auto', marginRight:'auto'}}>
                 <h2 style={{marginBottom:'20px'}}>회원가입을 해주세요</h2>
                     <form action='/api/post/userdata' method="post">
                         <div className="input-container row">

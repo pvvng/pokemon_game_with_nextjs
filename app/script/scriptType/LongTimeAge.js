@@ -4,22 +4,25 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function Cat({userdata}) {
+export default function LongTimeAge({userdata}) {
   let context =([
-    '  반갑다옹 신입. 난 로켓단의 귀염둥이 마스코트 나옹이다옹.',
-    ' 이번 신입 교육은 내가 맡게 되었으니 잘 들으라옹.',
-    ` 로켓단이 뭐하는 곳이냐고? 
-    그렇게 물으신다면 대답해 드리는게 인지상정이다옹.`,
-    ` 우리 로켓단은 이 세계의 파괴를 막기위해,
-    이 세계의 평화를 지키기 위해,
-    사랑과 진실 어둠을 뿌리고 다닌다옹.`,
-    ' 신입인 네가 할 일은 포켓몬을 잡아서 마켓에 파는 것이다옹.',
-    ' 몬스터볼 5개와 슈퍼볼 1개를 줄테니 열심히 해보라옹.',
+    '  [몇년 후..]',
+    ' 난 그날 한지우와의 배틀에서 패배했다.',
+    ` 그러고 다시는 포켓몬 밀매를 하지 않기로 약속했지만,
+    약속을 지키진 않았다.`,
+    ` 어느날 우연히 본 티비에서 한지우를 다시 보았다.
+    그 녀석은 정말 세계 최고의 포켓몬 트레이너가 되어 있었다.`,
+    ' 나도 옛날엔 저런 꿈이 있었는데..',
+    ' ...',
+    ' 뭐 어쩌겠어. 다 먹고 살자고 하는건데.',
+    ' 역시 돈이 최고야!',
+    ` [END]`
   ]);
 
   let [contextState, setContextState] = useState(0);
   let [typedText, setTypedText] = useState('');
   let [componentStatus, setComponentStatus] = useState('');
+  let [hiddenImage, setHiddenImage] = useState('op')
   let router = useRouter();
 
   useEffect(() => {
@@ -46,19 +49,25 @@ export default function Cat({userdata}) {
     <div className={componentStatus} style={{ width: '100%', height: '100vh', background: 'white', position: 'absolute', top: 0 }}>
       <div style={{ maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}>
         <p style={{ textAlign: "center", marginTop: '20px' }}>말풍선을 터치하세요</p>
-        <img src='/images/나옹이.webp' width={'100%'} />
+        <div style={{display:'flex', justifyContent:'center'}}>
+          <img src='/images/우승.png' width={'100%'} className={hiddenImage} style={{marginLeft:'auto', marginRight:'auto',transition:'all 1s'}}/>
+        </div>
 
         <div className='speech-bubble' style={{ cursor: 'pointer' }} onClick={() => {
           setContextState((prevState) => (prevState + 1)); 
+          if(contextState === 2){
+            setHiddenImage('');
+          }
           if(contextState >= context.length-1){
             setComponentStatus('op');
             // user의 script + 1 하는 api
             axios.put('/api/update/script', userdata);
             router.push('/');
+            // 마이페이지를 refresh하는 목적임. 마이페이지가 refresh되지 않으면
+            // user의 notorious나 script가 업데이트 되지 않아서 스크립트가 계속 반복되기 때문임
             router.refresh();
           }
         }}>
-          <p className='card-title' style={{ color: 'white' }}>[나옹]</p>
           <p style={{ color: 'white', whiteSpace: 'pre-wrap' }}>{typedText}</p>
         </div>
       </div>
