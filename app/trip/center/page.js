@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { connectDB } from '@/util/database';
-import userCheck from '../../userCheck';
+import userCheck from '../../functions/userCheck';
 import LoginForm from '../../LoginTools/LoginForm';
 import PurchaseItems from './purchaseBtn/PurchaseItems';
 

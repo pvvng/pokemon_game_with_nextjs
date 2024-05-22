@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth";
 import Cat from "./scriptType/Cat";
 import { connectDB } from "@/util/database";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
-import userCheck from "../userCheck";
+import userCheck from "../functions/userCheck";
 import LoginForm from "../LoginTools/LoginForm";
 import Boss from "./scriptType/Boss";
 import Hero from "./scriptType/Hero";

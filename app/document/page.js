@@ -3,7 +3,7 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth";
-import userCheck from "../userCheck";
+import userCheck from "../functions/userCheck";
 
 export default async function Document() {
 

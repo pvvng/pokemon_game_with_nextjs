@@ -6,7 +6,7 @@ import '../badgeScss/badge.css';
 import TypeBadge from "./TypeBadge";
 import Loading from "../loadingComponents/Loading";
 import { useRouter } from "next/navigation";
-import fetchData from "../get_pokemon";
+import fetchData from "../functions/get_pokemon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchengin } from "@fortawesome/free-brands-svg-icons";
 
@@ -40,7 +40,7 @@ export default function PokemonCard({유저포켓몬}){
     // 데이터가 불러와질 때마다 (pokmondata 가 변경될 때 마다) htmlPokemon 에 추가하기
     useEffect(()=>{
   
-      setHtmlPokemon([...htmlPokemon, ...pokemonData])
+      setHtmlPokemon([...htmlPokemon, ...pokemonData]);
   
     },[pokemonData])
   
@@ -65,7 +65,6 @@ export default function PokemonCard({유저포켓몬}){
         setLoadBtnStatus('hide');
       }
     };
-  
   
     if(htmlPokemon.length > 0){
          return(
@@ -94,7 +93,7 @@ export default function PokemonCard({유저포켓몬}){
                   {htmlPokemon.map(pokemon => {
                         let cardStatus = 'dont-have';
 
-                        // 유저가 가지고 있는 포켓몬이면 카드 하얗게 변경
+                        // 유저가 가지고 있는 포켓몬이면 카드 내용 투명도 변경
                     
                         if((유저포켓몬.user_document).includes(pokemon.id)){
                             cardStatus = 'have';
@@ -103,8 +102,13 @@ export default function PokemonCard({유저포켓몬}){
                       if ( (pokemon.id).toString().includes(inputValue) || (pokemon.korean_name).includes(inputValue) ){
                           return(
                               <div className="col-lg-2 col-md-3 col-sm-4" key={pokemon.id} style={{marginBottom:'10px'}} onClick={()=>{
-                                //박스 클릭시 상세 정보 페이지로 이동
-                                router.push('/document/' + pokemon.id);
+                                if(cardStatus !== 'have'){
+                                  // 도감에 등록되지 않은 포켓몬
+                                  alert('도감에 등록되지 않은 포켓몬입니다.');
+                                }else{
+                                  //박스 클릭시 상세 정보 페이지로 이동
+                                  router.push('/document/' + pokemon.id);
+                                }
                               }}>
                                 <div style={{background:'grey', borderRadius:'10px'}}>
                                   <div className={`card p-2 ${cardStatus}`}>
@@ -136,7 +140,7 @@ export default function PokemonCard({유저포켓몬}){
         )
     }else{
       return(
-        <Loading/>
+        <Loading 타입='running' />
       )
     }
 }

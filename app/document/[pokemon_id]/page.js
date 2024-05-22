@@ -1,13 +1,13 @@
 'use client'
 
 import { useParams } from "next/navigation";
-import fetchData from "@/app/get_pokemon";
+import fetchData from "@/app/functions/get_pokemon";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './detail.css'
 import '../../badgeScss/badge.css';
 import TypeBadge from "../TypeBadge";
 import { useEffect, useState } from "react";
-import LoadingDetail from "@/app/loadingComponents/LoadingDetail";
+import Loading from "@/app/loadingComponents/Loading";
 
 export default function(){
   const params = useParams()
@@ -117,7 +117,7 @@ export default function(){
     )
   }else{
     return(
-      <LoadingDetail/>
+      <Loading 타입='dancing'/>
     )
   }
 }

@@ -1,4 +1,4 @@
-export default function Loading(){
+export default function Loading({타입}){
     return (
         <div style={{position: "fixed", top:0, width:'100vw',}}>
             <div className="sky-bg">
@@ -6,7 +6,7 @@ export default function Loading(){
                     <h2 className="typewriter" style={{fontSize:'2rem', fontWeight:'bold', color:'white'}}>LOADING...</h2>
                 </div>  
                 <div style={{maxWidth:'728px', marginLeft:'auto', marginRight:'auto'}}>
-                    <img src='/images/pikachu-running.gif' width={'100%'}/>
+                    <img src={`/images/pikachu-${타입}.gif`} width={'100%'}/>
                 </div>
                 <img src='/images/grass.png' width={'100%'}/>
             </div>

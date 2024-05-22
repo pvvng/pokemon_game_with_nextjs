@@ -1,6 +1,6 @@
 import { connectDB } from "@/util/database";
-import RenderRandPokemonData from "../RenderRandPokemonData";
-import userCheck from "@/app/userCheck";
+import RenderRandPokemonData from "../renderRandPokemon/RenderRandPokemonData";
+import userCheck from "@/app/functions/userCheck";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import LoginForm from "@/app/LoginTools/LoginForm";

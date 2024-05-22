@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 import { connectDB } from '@/util/database';
-import userCheck from '../userCheck';
+import userCheck from '../functions/userCheck';
 import LoginForm from '../LoginTools/LoginForm';
 
 export default async function Trip(){

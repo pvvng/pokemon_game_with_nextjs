@@ -3,11 +3,11 @@ import { getServerSession } from "next-auth";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connectDB } from "@/util/database";
 import LoginForm from "./LoginTools/LoginForm";
-import userCheck from "./userCheck";
-import IllegalMarket from "./IllegalMarket";
-import Purchase from "./purchase";
+import userCheck from "./functions/userCheck";
+import IllegalMarket from "./mainPageComponent/IllegalMarket";
 import { redirect } from "next/navigation";
-import BallDescription from "./BallDescription";
+import BallDescription from "./mainPageComponent/BallDescription";
+import Purchase from "./mainPageComponent/Purchase";
 
 export default async function Home() {
 
