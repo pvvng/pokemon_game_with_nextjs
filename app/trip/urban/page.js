@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import LoginForm from "@/app/LoginTools/LoginForm";
 
-export default async function (){
+export default async function urban(){
 
   // login data 불러오기
   let session = await getServerSession(authOptions);

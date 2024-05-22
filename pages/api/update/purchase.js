@@ -1,7 +1,7 @@
 import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
 
-export default async function (요청, 응답){
+export default async function handler(요청, 응답){
   if( 요청.method === 'PUT'){
 
 

@@ -6,7 +6,7 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import LoginForm from "@/app/LoginTools/LoginForm";
 import ScriptComponent from "../DrOhS-lab/ScriptComponent";
 
-export default async function (){
+export default async function drohLab(){
 
   // login data 불러오기
   let session = await getServerSession(authOptions);

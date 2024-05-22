@@ -9,7 +9,7 @@ import TypeBadge from "../TypeBadge";
 import { useEffect, useState } from "react";
 import Loading from "@/app/loadingComponents/Loading";
 
-export default function(){
+export default function DeatilPokemon(){
   const params = useParams()
   let detailId = (params.pokemon_id)
   const [pokemonDetailData, setPokemonDetailData] = useState([]);

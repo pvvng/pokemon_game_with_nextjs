@@ -8,7 +8,7 @@ import Boss from "./scriptType/Boss";
 import Hero from "./scriptType/Hero";
 import LongTimeAgo from "./scriptType/LongTimeAge";
 
-export default async function () {
+export default async function script() {
 
       // login data 불러오기
     let session = await getServerSession(authOptions);
