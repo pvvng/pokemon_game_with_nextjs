@@ -10,11 +10,7 @@ import './bg.css';
 
 export default function RenderRandPokemonData({서식지1, 서식지2, userdata}){
 
-    // let params = useParams()
-    // console.log(params)
-
     let router = useRouter();
-
 
     const [randPokemonData, setRandPokemonData] = useState([]);
     let a = randomGotchaNumber();
@@ -112,7 +108,8 @@ function Template ({randPokemonData, router, userdata}){
                     <p className='typewriter'>야생의 <span className='card-title' style={{fontSize:'1.3rem'}}>{randPokemonData[0].korean_name}</span> 이/가 나타났다!</p>
                 </div>
                 <div style={{textAlign:'center'}}>
-                    <button className='btn btn-danger m-2'onClick={()=>{router.push('/trip')}}>그냥 지나간다</button>
+                    <p style={{margin:'0px', fontWeight:'bold'}}>어떤 몬스터볼로 잡을까?</p>
+                    <p style={{color:'grey'}}>몬스터볼 사진 누르기</p>
                     <div className='row'>
                         <div className='col-3' 
                         onClick={()=>{
@@ -144,6 +141,7 @@ function Template ({randPokemonData, router, userdata}){
                             <p>마스터볼 : {userdata.mball} 개</p>
                         </div>
                     </div>
+                    <button className='btn btn-danger m-2'onClick={()=>{router.push('/trip')}}>그냥 지나간다</button>
                 </div>
             </div>
         )
