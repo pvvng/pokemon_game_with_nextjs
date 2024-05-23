@@ -91,6 +91,11 @@
 
 ## 4. 이용 방법 && 주요 기능
 
+### 4-0 로그인
+
+<img  src = 'https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/1d25696c-5fb1-4c44-bc12-1beca3141120' />
+
+
 ### 4-1 메인페이지(/)
 
 - 
