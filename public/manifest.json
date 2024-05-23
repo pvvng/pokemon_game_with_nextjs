@@ -150,311 +150,389 @@
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-16.png",
-        "sizes": "16x16"
+        "sizes": "16x16",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-20.png",
-        "sizes": "20x20"
+        "sizes": "20x20",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-24.png",
-        "sizes": "24x24"
+        "sizes": "24x24",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-30.png",
-        "sizes": "30x30"
+        "sizes": "30x30",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-32.png",
-        "sizes": "32x32"
+        "sizes": "32x32",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-36.png",
-        "sizes": "36x36"
+        "sizes": "36x36",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-40.png",
-        "sizes": "40x40"
+        "sizes": "40x40",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-44.png",
-        "sizes": "44x44"
+        "sizes": "44x44",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-48.png",
-        "sizes": "48x48"
+        "sizes": "48x48",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-60.png",
-        "sizes": "60x60"
+        "sizes": "60x60",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-64.png",
-        "sizes": "64x64"
+        "sizes": "64x64",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-72.png",
-        "sizes": "72x72"
+        "sizes": "72x72",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-80.png",
-        "sizes": "80x80"
+        "sizes": "80x80",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-96.png",
-        "sizes": "96x96"
+        "sizes": "96x96",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.targetsize-256.png",
-        "sizes": "256x256"
+        "sizes": "256x256",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-16.png",
-        "sizes": "16x16"
+        "sizes": "16x16",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-20.png",
-        "sizes": "20x20"
+        "sizes": "20x20",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-24.png",
-        "sizes": "24x24"
+        "sizes": "24x24",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-30.png",
-        "sizes": "30x30"
+        "sizes": "30x30",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-32.png",
-        "sizes": "32x32"
+        "sizes": "32x32",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-36.png",
-        "sizes": "36x36"
+        "sizes": "36x36",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-40.png",
-        "sizes": "40x40"
+        "sizes": "40x40",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-44.png",
-        "sizes": "44x44"
+        "sizes": "44x44",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-48.png",
-        "sizes": "48x48"
+        "sizes": "48x48",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-60.png",
-        "sizes": "60x60"
+        "sizes": "60x60",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-64.png",
-        "sizes": "64x64"
+        "sizes": "64x64",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-72.png",
-        "sizes": "72x72"
+        "sizes": "72x72",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-80.png",
-        "sizes": "80x80"
+        "sizes": "80x80",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-96.png",
-        "sizes": "96x96"
+        "sizes": "96x96",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-unplated_targetsize-256.png",
-        "sizes": "256x256"
+        "sizes": "256x256",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-16.png",
-        "sizes": "16x16"
+        "sizes": "16x16",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-20.png",
-        "sizes": "20x20"
+        "sizes": "20x20",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-24.png",
-        "sizes": "24x24"
+        "sizes": "24x24",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-30.png",
-        "sizes": "30x30"
+        "sizes": "30x30",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-32.png",
-        "sizes": "32x32"
+        "sizes": "32x32",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-36.png",
-        "sizes": "36x36"
+        "sizes": "36x36",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-40.png",
-        "sizes": "40x40"
+        "sizes": "40x40",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-44.png",
-        "sizes": "44x44"
+        "sizes": "44x44",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-48.png",
-        "sizes": "48x48"
+        "sizes": "48x48",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-60.png",
-        "sizes": "60x60"
+        "sizes": "60x60",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-64.png",
-        "sizes": "64x64"
+        "sizes": "64x64",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-72.png",
-        "sizes": "72x72"
+        "sizes": "72x72",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-80.png",
-        "sizes": "80x80"
+        "sizes": "80x80",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-96.png",
-        "sizes": "96x96"
+        "sizes": "96x96",
+        "purpose": "maskable"
         },
         {
         "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-256.png",
-        "sizes": "256x256"
+        "sizes": "256x256",
+        "purpose": "maskable"
         },
         {
         "src": "android/android-launchericon-512-512.png",
-        "sizes": "512x512"
+        "sizes": "512x512",
+        "purpose": "maskable"
         },
         {
         "src": "android/android-launchericon-192-192.png",
-        "sizes": "192x192"
+        "sizes": "192x192",
+        "purpose": "maskable"
         },
         {
         "src": "android/android-launchericon-144-144.png",
-        "sizes": "144x144"
+        "sizes": "144x144",
+        "purpose": "maskable"
         },
         {
         "src": "android/android-launchericon-96-96.png",
-        "sizes": "96x96"
+        "sizes": "96x96",
+        "purpose": "maskable"
         },
         {
         "src": "android/android-launchericon-72-72.png",
-        "sizes": "72x72"
+        "sizes": "72x72",
+        "purpose": "maskable"
         },
         {
         "src": "android/android-launchericon-48-48.png",
-        "sizes": "48x48"
+        "sizes": "48x48",
+        "purpose": "maskable"
         },
         {
         "src": "ios/16.png",
-        "sizes": "16x16"
+        "sizes": "16x16",
+        "purpose": "maskable"
         },
         {
         "src": "ios/20.png",
-        "sizes": "20x20"
+        "sizes": "20x20",
+        "purpose": "maskable"
+
         },
         {
         "src": "ios/29.png",
-        "sizes": "29x29"
+        "sizes": "29x29",
+        "purpose": "maskable"
         },
         {
         "src": "ios/32.png",
-        "sizes": "32x32"
+        "sizes": "32x32",
+        "purpose": "maskable"
         },
         {
         "src": "ios/40.png",
-        "sizes": "40x40"
+        "sizes": "40x40",
+        "purpose": "maskable"
         },
         {
         "src": "ios/50.png",
-        "sizes": "50x50"
+        "sizes": "50x50",
+        "purpose": "maskable"
         },
         {
         "src": "ios/57.png",
-        "sizes": "57x57"
+        "sizes": "57x57",
+        "purpose": "maskable"
         },
         {
         "src": "ios/58.png",
-        "sizes": "58x58"
+        "sizes": "58x58",
+        "purpose": "maskable"
         },
         {
         "src": "ios/60.png",
-        "sizes": "60x60"
+        "sizes": "60x60",
+        "purpose": "maskable"
         },
         {
         "src": "ios/64.png",
-        "sizes": "64x64"
+        "sizes": "64x64",
+        "purpose": "maskable"
         },
         {
         "src": "ios/72.png",
-        "sizes": "72x72"
+        "sizes": "72x72",
+        "purpose": "maskable"
         },
         {
         "src": "ios/76.png",
-        "sizes": "76x76"
+        "sizes": "76x76",
+        "purpose": "maskable"
         },
         {
         "src": "ios/80.png",
-        "sizes": "80x80"
+        "sizes": "80x80",
+        "purpose": "maskable"
         },
         {
         "src": "ios/87.png",
-        "sizes": "87x87"
+        "sizes": "87x87",
+        "purpose": "maskable"
         },
         {
         "src": "ios/100.png",
-        "sizes": "100x100"
+        "sizes": "100x100",
+        "purpose": "maskable"
         },
         {
         "src": "ios/114.png",
-        "sizes": "114x114"
+        "sizes": "114x114",
+        "purpose": "maskable"
         },
         {
         "src": "ios/120.png",
-        "sizes": "120x120"
+        "sizes": "120x120",
+        "purpose": "maskable"
         },
         {
         "src": "ios/128.png",
-        "sizes": "128x128"
+        "sizes": "128x128",
+        "purpose": "maskable"
         },
         {
         "src": "ios/144.png",
-        "sizes": "144x144"
+        "sizes": "144x144",
+        "purpose": "maskable"
         },
         {
         "src": "ios/152.png",
-        "sizes": "152x152"
+        "sizes": "152x152",
+        "purpose": "maskable"
         },
         {
         "src": "ios/167.png",
-        "sizes": "167x167"
+        "sizes": "167x167",
+        "purpose": "maskable"
         },
         {
         "src": "ios/180.png",
-        "sizes": "180x180"
+        "sizes": "180x180",
+        "purpose": "maskable"
         },
         {
         "src": "ios/192.png",
-        "sizes": "192x192"
+        "sizes": "192x192",
+        "purpose": "maskable"
         },
         {
         "src": "ios/256.png",
-        "sizes": "256x256"
+        "sizes": "256x256",
+        "purpose": "maskable"
         },
         {
         "src": "ios/512.png",
-        "sizes": "512x512"
+        "sizes": "512x512",
+        "purpose": "maskable"
         },
         {
         "src": "ios/1024.png",
-        "sizes": "1024x1024"
+        "sizes": "1024x1024",
+        "purpose": "maskable"
         }
     ],
     "lang": "ko",
