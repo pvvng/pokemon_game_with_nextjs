@@ -35,7 +35,7 @@ export default function Template ({randPokemonData, router, userdata}){
                         {
                             ballImage.map((BI,i) => {
                                 return(
-                                    <div key={i}>
+                                    <div className='col-3' key={i}>
                                         <BallBox 이미지경로={BI} ballType={ballTypeArr[i]} userdata={userdata} setBall={setBall} setWhichBall={setWhichBall} />
                                     </div>
                                 )
