@@ -1,7 +1,7 @@
 # 쯔꾸르 미니 포켓몬 팬게임 - ⚡로켓단이되⚡ README
 
 ## 설치 방법
-
+[https://pokemon-sigma-two.vercel.app/]
 ## installed Library
     npm install @reduxjs/toolkit@1.8.1 react-redux
     npm install react-router-dom@6
