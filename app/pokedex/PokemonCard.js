@@ -65,8 +65,6 @@ export default function PokemonCard({유저포켓몬}){
         setLoadBtnStatus('hide');
       }
     };
-
-    console.log(유저포켓몬)
   
     if(htmlPokemon.length > 0){
          return(
@@ -109,7 +107,7 @@ export default function PokemonCard({유저포켓몬}){
                                   alert('도감에 등록되지 않은 포켓몬입니다.');
                                 }else{
                                   //박스 클릭시 상세 정보 페이지로 이동
-                                  router.push('/document/' + pokemon.id);
+                                  router.push('/pokedex/' + pokemon.id);
                                 }
                               }}>
                                 <div style={{background:'grey', borderRadius:'10px'}}>
