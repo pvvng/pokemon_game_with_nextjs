@@ -65,6 +65,8 @@ export default function PokemonCard({유저포켓몬}){
         setLoadBtnStatus('hide');
       }
     };
+
+    console.log(유저포켓몬)
   
     if(htmlPokemon.length > 0){
          return(
@@ -93,12 +95,12 @@ export default function PokemonCard({유저포켓몬}){
                   {htmlPokemon.map(pokemon => {
                         let cardStatus = 'dont-have';
 
-                        // 유저가 가지고 있는 포켓몬이면 카드 내용 투명도 변경
-                    
-                        if((유저포켓몬.user_document).includes(pokemon.id)){
+                        if(유저포켓몬 !== undefined){
+                            // 유저가 가지고 있는 포켓몬이면 카드 내용 투명도 변경
+                          if((유저포켓몬.user_document).includes(pokemon.id)){
                             cardStatus = 'have';
+                          }
                         }
-
                       if ( (pokemon.id).toString().includes(inputValue) || (pokemon.korean_name).includes(inputValue) ){
                           return(
                               <div className="col-lg-2 col-md-3 col-sm-4" key={pokemon.id} style={{marginBottom:'10px'}} onClick={()=>{
