@@ -26,8 +26,8 @@
   <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/4a3d0958-72e5-48a2-ab56-52ac3f99ed0f' width='31%' />
       <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/1b0aa4ce-126b-4db6-8c85-1655f9edad7c' width='33%'/>
       <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/59db49ff-5b50-477a-afaa-1b86c2fb00dc' width='33%'/>
-
 </div>
+
 
 ## 1. 개요
 - 프로젝트 이름 : 포켓몬 미니 팬 게임 - ⚡로켓단이되⚡
