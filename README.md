@@ -2,7 +2,7 @@
 
 ## 1. 설치 방법
 
-### click and install! 👉 [로켓단이되](https://pokemon-sigma-two.vercel.app/) 
+### click and install 👉 [로켓단이되](https://pokemon-sigma-two.vercel.app/) 
 
 <details>
   <summary>window 환경에서 설치하기</summary>
