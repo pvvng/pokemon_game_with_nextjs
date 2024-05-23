@@ -95,9 +95,9 @@
 
 ##### 로그인
 <div>
-  <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/e62c0135-0e58-4813-bb16-98bdb5f32b24' width='49%' height='320px'/>
+  <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/e62c0135-0e58-4813-bb16-98bdb5f32b24' width='49%' height='400px'/>
 
-  <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/394c6247-5ea5-4a0f-9c52-45a15a17588e' width='49%' height='320px' />
+  <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/394c6247-5ea5-4a0f-9c52-45a15a17588e' width='49%' height='400px' />
 </div>
 
 - 로그인 버튼을 눌러서 회원가입하거나 로그인 할 수 있습니다.
@@ -153,13 +153,13 @@
 ##### 여행지 페이지
 
 <div>
-  <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/48159034-90ae-461e-80d6-2ed2f9e12c57' width='49%' height='320px'/>
+  <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/48159034-90ae-461e-80d6-2ed2f9e12c57' width='49%' />
 
-<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/872e2fb4-d8b4-4b2a-ab35-281021df29b9' width='49%' height='320px'/>
+<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/872e2fb4-d8b4-4b2a-ab35-281021df29b9' width='49%' />
 
-<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/7d07fee2-1918-4eaa-a8fa-fbf5aed24674' width='49%' height='320px'/>
+<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/7d07fee2-1918-4eaa-a8fa-fbf5aed24674' width='49%' />
 
-<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/3c08806f-9010-4669-b4d7-74fc214c577e' width='49%' height='320px'/>
+<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/3c08806f-9010-4669-b4d7-74fc214c577e' width='49%' />
 </div>
 
 - 사용자는 trip 페이지 하단 버튼을 눌러 산, 바다, 시내 혹은 깊은 숲을 여행할 수 있습니다.
