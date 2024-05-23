@@ -1,31 +1,55 @@
 # 포켓몬 미니 팬 게임 - ⚡로켓단이되⚡ README
 
-## 설치 방법
+## 1. 설치 방법
 
-#### [로켓단이되](https://pokemon-sigma-two.vercel.app/) 👈 click and install!
+### click and install! 👉 [로켓단이되](https://pokemon-sigma-two.vercel.app/) 
 
-----
+<details>
+  <summary>window 환경에서 설치하기</summary>
+  <div align = 'center'>
+    <img src='https://github.com/pvvng/pvvng.github.io/assets/112927193/85f131a5-41ae-496e-aa15-5db551236de4' width='33%' />
+    <img src='https://github.com/pvvng/pvvng.github.io/assets/112927193/34e7f2a3-dbcd-484a-8136-89aff62374d1' width='33%' />
+  </div>
 
-### 1. window 환경에서 설치하기
-<div>
-  <img src='https://github.com/pvvng/pvvng.github.io/assets/112927193/85f131a5-41ae-496e-aa15-5db551236de4' width='49%' />
-  <img src='https://github.com/pvvng/pvvng.github.io/assets/112927193/34e7f2a3-dbcd-484a-8136-89aff62374d1' width='49%' />
-</div>
+  ### Some Javascript
+  ```js
+  function logSomething(something) {
+    console.log('Something', something);
+  }
+  ```
+</details>
 
-### 2. android 환경에서 설치하기
-<div>
-  <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/99d8824b-ba02-4cf0-897d-430c45a55176' width='50%' />
-</div>
+<details>
+  <summary>ios 환경에서 설치하기</summary>
+  <div>
+    <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/4a3d0958-72e5-48a2-ab56-52ac3f99ed0f' width='31%' />
+        <img align='top' src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/1b0aa4ce-126b-4db6-8c85-1655f9edad7c' width='33%'/>
+        <img align='top' src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/59db49ff-5b50-477a-afaa-1b86c2fb00dc' width = '33%'/>
+  </div>
 
-### 3. ios 환경에서 설치하기
-<div>
-  <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/4a3d0958-72e5-48a2-ab56-52ac3f99ed0f' width='31%' />
-      <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/1b0aa4ce-126b-4db6-8c85-1655f9edad7c' width='33%'/>
-      <div align="center"><img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/59db49ff-5b50-477a-afaa-1b86c2fb00dc'/></div>
-</div>
+  ### Some Javascript
+  ```js
+  function logSomething(something) {
+    console.log('Something', something);
+  }
+  ```
+</details>
 
+<details>
+  <summary>android 환경에서 설치하기</summary>
+  <div align='center'>
+    <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/99d8824b-ba02-4cf0-897d-430c45a55176' width='30%' />
+  </div>
 
-## 1. 개요
+  ### Some Javascript
+  ```js
+  function logSomething(something) {
+    console.log('Something', something);
+  }
+  ```
+</details>
+
+## 2. 개요
 - 프로젝트 이름 : 포켓몬 미니 팬 게임 - ⚡로켓단이되⚡
 - 개발 기간 : 2024.05.14 ~ 2024.05.23
 - 개발 환경 : Next.js, mongoDB, scss
@@ -40,7 +64,7 @@
         npm i --save @fortawesome/react-fontawesome
         npm install animate.css
 
-## 2. 프로젝트 설명
+## 3. 프로젝트 설명
 
 - ##### Next.js 를 활용하여 가볍게 즐길 수 있는 포켓몬스터 미니 팬게임입니다.
   - 구글링 중 포켓몬의 데이터를 받을 수 있는 API가 있다는 사실을 알게되었고, 반드시 이것을 활용하여 프로젝트를 진행하겠다고 결심했습니다. 포켓몬스터의 핵심 기능은 포켓몬을 몬스터로 포획하는 기능이라고 생각하기에 위 기능을 구현하는 것을 핵심 목표로 잡았습니다. 또한, 간단한 게임적인 요소를 삽입하였습니다.
@@ -65,14 +89,13 @@
 - ##### Git Flow
     - Git Flow 전략을 활용하여 프로젝트를 관리하고자 했습니다. Git을 활용한 버전 관리 전략을 미리 체득하는 것이 후일 큰 도움이 되리라 생각하여 최대한 Git Flow 전략의 흐름을 지키고자 노력하였습니다. 다만, realese, hotfix branch 사용은 위 프로젝트에 불필요한 사족이 되리라 판단하여 main, develop, feature 이 3개의 브런치만 이용하여 개발 진행 하였습니다.
 
-## 3. 이용 방법
+## 4. 이용 방법
 
 
-## 4. 프로젝트 중 신경 쓴 부분
+## 5-1. 프로젝트 회고
 
-
-## 5. 프로젝트 중 어려웠던 부분
-
+- ### 5-1. 프로젝트 중 신경 쓴 부분
+- ### 5-1. 프로젝트 중 어려웠던 부분
 
 
 ## 6. 후기
