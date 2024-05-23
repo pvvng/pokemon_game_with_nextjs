@@ -22,7 +22,7 @@ export default async function RootLayout({ children }) {
     <html lang="ko">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#FFFFFF" />
         <link rel="icon" href="/icons/icon-192x192.png" />
       </head>
       <body className={inter.className} style={{background:'#eee'}}>
