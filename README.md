@@ -2,9 +2,30 @@
 
 ## 설치 방법
 
-#### [로켓단이되](https://pokemon-sigma-two.vercel.app/)
+#### [로켓단이되](https://pokemon-sigma-two.vercel.app/) 👈 click and install!
 
 
+
+### window 환경에서 설치하기
+----
+<div>
+  <img src='https://github.com/pvvng/pvvng.github.io/assets/112927193/85f131a5-41ae-496e-aa15-5db551236de4' width='49%' />
+  <img src='https://github.com/pvvng/pvvng.github.io/assets/112927193/34e7f2a3-dbcd-484a-8136-89aff62374d1' width='49%' />
+</div>
+
+### android 환경에서 설치하기
+----
+<div>
+  <img src='https://github.com/pvvng/pvvng.github.io/assets/112927193/85f131a5-41ae-496e-aa15-5db551236de4' width='49%' />
+  <img src='https://github.com/pvvng/pvvng.github.io/assets/112927193/34e7f2a3-dbcd-484a-8136-89aff62374d1' width='49%' />
+</div>
+
+### ios 환경에서 설치하기
+----
+<div>
+  <img src='https://github.com/pvvng/pvvng.github.io/assets/112927193/85f131a5-41ae-496e-aa15-5db551236de4' width='49%' />
+  <img src='https://github.com/pvvng/pvvng.github.io/assets/112927193/34e7f2a3-dbcd-484a-8136-89aff62374d1' width='49%' />
+</div>
 
 ## 1. 개요
 - 프로젝트 이름 : 포켓몬 미니 팬 게임 - ⚡로켓단이되⚡
