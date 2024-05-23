@@ -68,7 +68,7 @@ export default function MonsterBall({whichBall, randPokemonData, router, userdat
         <div style={{marginLeft:'auto', marginRight:'auto', maxWidth:'728px'}}>
             <div className={replacePath}  style={{textAlign:'center'}}>
                 <div>
-                    <img className={`animate__animated animate__${ani}`}  style={{animationIterationCount : 3}} src='/images/monsterball-front.png' width={'45%'}/>
+                    <img className={`animate__animated animate__${ani}`} style={{animationIterationCount : 3}} src='/images/monsterball-front.png' />
                 </div>
             </div>
             <div className='context-box'>
