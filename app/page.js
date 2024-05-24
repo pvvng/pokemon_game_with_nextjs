@@ -9,6 +9,7 @@ import { redirect } from "next/navigation";
 import BallDescription from "./mainPageComponent/BallDescription";
 import Purchase from "./mainPageComponent/Purchase";
 import QuitBtn from "./mainPageComponent/QuitBtn";
+import QuestAlert from "./mainPageComponent/QuestAlert";
 
 export default async function Home() {
 
@@ -38,6 +39,7 @@ export default async function Home() {
     if(session !== null){
         return(
         <div className="main-container">
+            {/* <QuestAlert userdata={userdata}/> */}
             {/* username */}
             <div className="mb-3">
                 <div className="row">
@@ -47,8 +49,6 @@ export default async function Home() {
                         <span>{(userdata.gold).toString()} ￦</span>
                     </div>
                 </div>
-
-
 
                 <p style={{fontWeight:'bold'}}>[로켓단]</p>
 
