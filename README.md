@@ -67,12 +67,14 @@
  
 - ##### Git Flow
     - Git Flow 전략을 활용하여 프로젝트를 관리하고자 했습니다. Git을 활용한 버전 관리 전략을 미리 체득하는 것이 후일 큰 도움이 되리라 생각하여 최대한 Git Flow 전략의 흐름을 지키고자 노력하였습니다. 다만, realese, hotfix branch 사용은 위 프로젝트에 불필요한 사족이 되리라 판단하여 main, develop, feature 이 3개의 브런치만 이용하여 개발 진행 하였습니다.
+    - 2024-05-24 / 로딩중 UX 개선을 위해 spinner를 도입하면서 hotfix branch를 활용하였습니다.
 
-## 4. 이용 방법 && 주요 기능
+## 4. 이용 방법과 주요 기능
 
-### 4-0 로그인 && 로딩 페이지
+### 4-0 로그인 && 회원 탈퇴 && 로딩 페이지
 
 ##### 로그인
+
 <div>
   <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/e62c0135-0e58-4813-bb16-98bdb5f32b24' width='49%' height='400px'/>
 
@@ -82,6 +84,14 @@
 - 로그인 버튼을 눌러서 회원가입하거나 로그인 할 수 있습니다.
 - DB에서 현재 로그인 한 회원의 이메일이 존재하는지 확인하고 존재하면 바로 메인페이지로 이동합니다. 
 - DB에 현재 로그인 한 회원의 이메일이 존재하지 않으면 회원가입 창을 보여주고, '나옹이' 스크립트를 보여줍니다.
+
+##### 회원 탈퇴
+
+<div align='center'>
+    <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/da1dfd17-5f2e-4716-9f1c-0e3fcdcb9c8e' width='49%'/>
+</div>
+
+  - 회원 탈퇴 버튼을 누르면 DB에 저장된 유저 관련 데이터가 모두 삭제됩니다.
 
 ##### 로딩 페이지
 
@@ -107,6 +117,8 @@
 
 - 마이페이지의 '보유 아이템' 탭에서는 현재 보유한 몬스터 볼들의 갯수를 알 수 있습니다. 더 구매하기 버튼을 누른다면 포켓몬 센터 페이지 (/trip/center) 페이지로 이동하고, 골드를 사용해 추가적인 몬스터볼 구매가 가능합니다.
 
+----
+
 ### 도감페이지(/pokedex)
 
 <div>
@@ -115,15 +127,15 @@
 
 </div>
 
-
 - 도감 페이지로 이동하면 PokeApi를 호출하여 50마리 포켓몬의 데이터를 불러옵니다. 불러온 데이터를 기반으로 포켓몬 카드를 html로 보여줍니다. 한번이라도 잡은 포켓몬은 흰색 바탕으로 보여주고, 잡은 적이 없는 포켓몬은 회색 바탕으로 보여줍니다.
   
 - 도감 페이지 상단 검색 버튼을 클릭하여 도감 번호 혹은 이름으로 검색이 가능합니다.
 
-<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/51cb6319-12f3-4346-a04c-e944e1cd1801' />
+<div align='center'>
+<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/51cb6319-12f3-4346-a04c-e944e1cd1801' width='49%' />
+</div>
 
 - 흰색 바탕의 포켓몬 카드를 클릭하면 상세 페이지로 이동합니다. 해당 페이지에서는 포켓몬의 구체적인 정보 확인이 가능합니다.  만약, 잡은적이 없는 포켓몬 카드를 클릭하면 alert 메시지를 띄웁니다.
-
 
 ----
 
@@ -150,7 +162,6 @@
 
 - 아주 드물게 전설의 포켓몬 (썬더, 파이어, 프리저, 뮤츠, 뮤) 가 출몰합니다. 이들은 서식지를 가리지 않으며 극도로 낮은 capture rate를 가집니다. 
 
-
 <div>
 <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/dccc09b0-2723-4ff8-b021-a8230eafed50' width='49%'/>
 <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/033ba01c-af7d-4fc3-8bcb-488e3c5258aa' width='49%'/>  
@@ -160,9 +171,10 @@
 - 사용자는 몬스터 볼을 던질때마다 javascript random() 함수를 통해서 1~100 사이 임의의 정수를 부여받습니다.
 - 만약 부여받은 정수가 포켓몬의 capture rate보다 낮거나 같다면 포켓몬 포획을 성공적으로 마무리합니다. 이외의 상황에서 포켓몬은 도망갑니다.
 
-
 ##### 포켓몬 센터 페이지
-<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/e39e40bc-c3ca-4277-a5e4-8f55354fb122' />
+<div align='center'>
+<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/e39e40bc-c3ca-4277-a5e4-8f55354fb122' width='49%'/>
+</div>
 
 - 포켓몬 센터 버튼을 클릭하면 몬스터볼 추가 구매를 할 수 있는 페이지(/trip/center)로 이동합니다. 구매 가능한 몬스터 볼의 최솟값은 0 입니다. input의 값을 직접 수정하거나, +, - 버튼을 클릭해서 몇개의 몬스터 볼을 구매할지 결정가능합니다.
 - input의 default value는 0이고 input에는 숫자만 입력 가능하며 (+, - 사용불가), input값이 0 일때 사용자가 -버튼을 클릭하면 alert 메시지를 띄웁니다. 만약 사용자가 보유한 금액이 구매하고자 하는 금액보다 적으면 alert 메시지를 띄웁니다.
@@ -173,8 +185,8 @@
 
 <details>
   <summary>나옹이 스크립트</summary>
-<div>
-<img src = 'https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/14b30519-1151-4d93-9d3e-e094e4a44244' />  
+<div align='center'>
+<img src = 'https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/14b30519-1151-4d93-9d3e-e094e4a44244' width='49%' />  
 </div>
 
 - 회원가입을 최초로 하면 나오는 스크립트입니다. 정확히는 사용자의 악명이 0이고, DB에 저장된 사용자의 스크립트 수치가 0일때 등장합니다. 해당 스크립트를 모두 읽으면 DB의 사용자 스크립트 수치가 1로 변경됩니다.
@@ -211,7 +223,10 @@
 
 <details>
   <summary>한지우 스크립트</summary>
-  <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/93617145-e912-4076-adef-cb8797fdb2b4'/>
+  <div align='center'>
+  <img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/93617145-e912-4076-adef-cb8797fdb2b4' width='49%' />
+    
+  </div>
 
 - 사용자의 악명이 100이고, 스크립트 수치가 3일 때 등장하는 스크립트입니다. 해당 스크립트가 종료되면 스크립트 수치가 4가 됩니다. 마이페이지로 redirect 되는 다른 스크립트와는 다르게 위 스크립트는 바로 엔딩 스크립트로 redirect 됩니다.
   
@@ -219,8 +234,11 @@
 
 <details>
   <summary>엔딩 스크립트</summary>
-<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/d519f2f4-927c-4a22-8c32-0ea5abe44e53' />
-
+  <div align='center'>
+<img src='https://github.com/pvvng/pokemon_game_with_nextjs/assets/112927193/d519f2f4-927c-4a22-8c32-0ea5abe44e53' width='49%' />
+    
+  </div>
+  
 - 마지막 스크립트로 사용자의 악명이 100이고, 스크립트 수치가 4일때 등장하는 스크립트입니다. 해당 스크립트가 종료되면 사용자의 스크립트 수치가 5가 됩니다. 
   
 </details>
@@ -228,8 +246,17 @@
 ## 5. 회고
 
 - ### 5-1. 프로젝트 중 신경 쓴 부분
+
+  - ##### 비동기 통신
+  - ##### 재사용 가능한 컴포넌트 / 함수
+  - ##### 더 나은 사용자 경험
+
 - ### 5-1. 프로젝트 중 어려웠던 부분 && 프로젝트의 아쉬운 부분
 
+  - ##### 
+  - #####
+  - #####
+  - 
 
 ## 6. 후기
 ### 추후 추가하고 싶은 기능 혹은 느낀 점
