@@ -30,18 +30,17 @@ export default function Template ({randPokemonData, router, userdata}){
                 <div style={{textAlign:'center'}}>
                     <p style={{margin:'0px', fontWeight:'bold'}}>어떤 몬스터볼로 잡을까?</p>
                     <p style={{color:'grey'}}>몬스터볼을 눌러서 포켓몬을 포획하세요!</p>
-                    <div className='row'>
+                    <div className='row' style={{width:'100%',marginLeft:'auto', marginRight:'auto'}}>
 
                         {
                             ballImage.map((BI,i) => {
                                 return(
-                                    <div key={i}>
+                                    <div className='col-3' key={i}>
                                         <BallBox 이미지경로={BI} ballType={ballTypeArr[i]} userdata={userdata} setBall={setBall} setWhichBall={setWhichBall} />
                                     </div>
                                 )
                             })
                         }
-
                     </div>
                     <button className='btn btn-danger m-2'onClick={()=>{router.push('/trip')}}>그냥 지나간다</button>
                 </div>

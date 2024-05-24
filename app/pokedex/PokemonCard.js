@@ -93,12 +93,12 @@ export default function PokemonCard({유저포켓몬}){
                   {htmlPokemon.map(pokemon => {
                         let cardStatus = 'dont-have';
 
-                        // 유저가 가지고 있는 포켓몬이면 카드 내용 투명도 변경
-                    
-                        if((유저포켓몬.user_document).includes(pokemon.id)){
+                        if(유저포켓몬 !== undefined){
+                            // 유저가 가지고 있는 포켓몬이면 카드 내용 투명도 변경
+                          if((유저포켓몬.user_document).includes(pokemon.id)){
                             cardStatus = 'have';
+                          }
                         }
-
                       if ( (pokemon.id).toString().includes(inputValue) || (pokemon.korean_name).includes(inputValue) ){
                           return(
                               <div className="col-lg-2 col-md-3 col-sm-4" key={pokemon.id} style={{marginBottom:'10px'}} onClick={()=>{
@@ -107,7 +107,7 @@ export default function PokemonCard({유저포켓몬}){
                                   alert('도감에 등록되지 않은 포켓몬입니다.');
                                 }else{
                                   //박스 클릭시 상세 정보 페이지로 이동
-                                  router.push('/document/' + pokemon.id);
+                                  router.push('/pokedex/' + pokemon.id);
                                 }
                               }}>
                                 <div style={{background:'grey', borderRadius:'10px'}}>
@@ -128,7 +128,9 @@ export default function PokemonCard({유저포켓몬}){
               <div style={{textAlign:'center', marginBottom:'13px'}}>
                 {/* && 연산자를 통해 loading중이 아닐때만 버튼 보여주기 */}
                 {isLoading ?
-                 <h2 className="typewriter">Loading...</h2>:
+                 <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>:
                  <div className={loadBtnStatus}>
                   <button className='btn btn-secondary' onClick={()=>{
                       handleLoadMore();

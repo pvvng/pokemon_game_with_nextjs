@@ -1,14 +1,18 @@
+- 시내
 grassland 목초지
 urban 도시
 
+- 산
 rough-terrain 황무지
-mountain
+mountain 산
 
+-바다
 waters-edge 물가
-sea
+sea 바다
 
-
+-깊은 숲
 forest 숲
-cave
+cave 동굴
 
+-전설의 포켓몬
 rare

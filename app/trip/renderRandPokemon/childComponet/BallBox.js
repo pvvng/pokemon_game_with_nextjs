@@ -36,7 +36,7 @@ export default function BallBox({이미지경로, ballType, userdata, setBall, s
             break;
     }
     return(
-        <div className='col-3' 
+        <div 
         onClick={()=>{
             throwBall(ballType);
         }}>
