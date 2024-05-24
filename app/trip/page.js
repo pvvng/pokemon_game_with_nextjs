@@ -30,7 +30,7 @@ export default async function Trip(){
             <img src='/images/path.jpeg' width={'100%'} style={{maxWidth:'728px'}}/>
             <div className='m-4'>
                 <Link className='Link-none-deco marker mx-2' href={'/trip/center'}>포켓몬 센터</Link>
-                <Link className='Link-none-deco marker mx-2' href={'/trip/DrOhS-lab'}>오박사의 연구소</Link>
+                <Link className='Link-none-deco marker mx-2' href={'/trip/dr-ohs-lab'}>오박사의 연구소</Link>
             </div>
 
             <div className='mb-4'>

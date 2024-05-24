@@ -4,7 +4,7 @@ import userCheck from "@/app/functions/userCheck";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import LoginForm from "@/app/LoginTools/LoginForm";
-import ScriptComponent from "../DrOhS-lab/ScriptComponent";
+import ScriptComponent from "./ScriptComponent";
 
 export default async function drohLab(){
 
