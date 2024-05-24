@@ -8,6 +8,7 @@ import IllegalMarket from "./mainPageComponent/IllegalMarket";
 import { redirect } from "next/navigation";
 import BallDescription from "./mainPageComponent/BallDescription";
 import Purchase from "./mainPageComponent/Purchase";
+import QuitBtn from "./mainPageComponent/QuitBtn";
 
 export default async function Home() {
 
@@ -46,6 +47,8 @@ export default async function Home() {
                         <span>{(userdata.gold).toString()} ￦</span>
                     </div>
                 </div>
+
+
 
                 <p style={{fontWeight:'bold'}}>[로켓단]</p>
 
@@ -87,6 +90,9 @@ export default async function Home() {
                     </div>
                 </div>
             </div>   
+            <div className="mt-5" style={{textAlign:"right"}}>
+                <QuitBtn userdata={userdata} />
+            </div>
         </div>
         )
     }
