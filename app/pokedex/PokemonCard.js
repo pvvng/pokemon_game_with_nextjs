@@ -128,7 +128,9 @@ export default function PokemonCard({유저포켓몬}){
               <div style={{textAlign:'center', marginBottom:'13px'}}>
                 {/* && 연산자를 통해 loading중이 아닐때만 버튼 보여주기 */}
                 {isLoading ?
-                 <h2 className="typewriter">Loading...</h2>:
+                 <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>:
                  <div className={loadBtnStatus}>
                   <button className='btn btn-secondary' onClick={()=>{
                       handleLoadMore();
