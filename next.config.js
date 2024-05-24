@@ -1,3 +1,7 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // 기존 Next.js 설정
+};
 
 const withPWA = require('next-pwa')({
   dest: 'public',
@@ -5,8 +9,6 @@ const withPWA = require('next-pwa')({
   skipWaiting: true,
 });
 
-module.exports = withPWA({
-  // 여기에 기존의 Next.js 설정을 추가할 수 있습니다.
-});
+module.exports = withPWA(nextConfig);
 
 
