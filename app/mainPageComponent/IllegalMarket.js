@@ -15,7 +15,7 @@ export default function IllegalMarket({dbPokemon, userdata}){
   // 로딩 상태 관측 state
   const [loading, setLoading] = useState(true); 
   // 버튼 관측 state
-  let [selling, setSelling] = useState('');
+  let [selling, setSelling] = useState(false);
   let router = useRouter();
 
   // state인 have 혹은 props인 dbpokemon의 값이 변경될때마다 state 변경
@@ -41,7 +41,7 @@ export default function IllegalMarket({dbPokemon, userdata}){
 
     // have의 값이 변할때마다 (포켓몬 판매 버튼을 누른 후, ajax 통신이 성공적으로 끝날 때 마다)
     // selling button을 다시 보이게 만든다
-    setSelling('');
+    setSelling(false);
 
     return ()=>{clearTimeout(a)}
 
@@ -90,16 +90,24 @@ export default function IllegalMarket({dbPokemon, userdata}){
                     <span className="mx-2">{a.korean_name}</span>
                   </div>
                   <span className="col-2"></span>
-                  <button className={`col-4 btn btn-secondary ${selling}`} style={{transition: 'all 0.2s'}} onClick={(e)=>{
-                    if (!selling){
-                      // selling = '' (false) 일때 실행
-                      setSelling('d-none');
-                      // 버튼 클릭시 해당 버튼 보이지 않게 만들기
-                      e.target.style.opacity = 0;
-                      // 삭제 핸들러
-                      handleDelete(a._id);
-                    }
-                  }}>밀매</button>
+                  {
+                    selling?
+                    <div className="spinner-border" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </div>:
+                    <button className={`col-4 btn btn-secondary`} style={{transition: 'all 0.2s'}} onClick={(e)=>{
+                      if (!selling){
+                        // selling = '' (false) 일때 실행
+                        setSelling(true);
+                        // 버튼 클릭시 해당 버튼 보이지 않게 만들기
+                        e.target.style.opacity = 0;
+                        // 삭제 핸들러
+                        handleDelete(a._id);
+                      }
+                      
+                    }}>밀매</button>
+                    
+                  }
                 </div>
             )
           })
