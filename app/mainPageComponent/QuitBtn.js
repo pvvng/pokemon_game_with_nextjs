@@ -4,7 +4,7 @@ import axios from "axios"
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation"
 
-export default function ({userdata}){
+export default function QuitBtn({userdata}){
 
     console.log(userdata)
 
