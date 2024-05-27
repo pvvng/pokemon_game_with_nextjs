@@ -42,6 +42,77 @@
         npm install mongodb
         npm i --save @fortawesome/react-fontawesome
         npm install animate.css
+- #### file tree
+  ```
+  📦 app
+  ┣ 📂badgeScss
+  ┃ ┣ 📜badge.css
+  ┃ ┣ 📜badge.css.map
+  ┃ ┗ 📜badge.scss
+  ┣ 📂functions
+  ┃ ┣ 📜get_pokemon.js
+  ┃ ┣ 📜randomGotchaNumber.js
+  ┃ ┗ 📜userCheck.js
+  ┣ 📂loadingComponents
+  ┃ ┗ 📜Loading.js
+  ┣ 📂LoginTools
+  ┃ ┣ 📜loginBtn.js
+  ┃ ┣ 📜LoginForm.js
+  ┃ ┗ 📜logoutBtn.js
+  ┣ 📂mainPageComponent
+  ┃ ┣ 📜BallDescription.js
+  ┃ ┣ 📜IllegalMarket.js
+  ┃ ┣ 📜Purchase.js
+  ┃ ┗ 📜QuitBtn.js
+  ┣ 📂pokedex
+  ┃ ┣ 📂[pokemon_id]
+  ┃ ┃ ┣ 📜detail.css
+  ┃ ┃ ┗ 📜page.js
+  ┃ ┣ 📜page.js
+  ┃ ┣ 📜PokemonCard.js
+  ┃ ┗ 📜TypeBadge.js
+  ┣ 📂script
+  ┃ ┣ 📂scriptType
+  ┃ ┃ ┣ 📜Boss.js
+  ┃ ┃ ┣ 📜Cat.js
+  ┃ ┃ ┣ 📜Hero.js
+  ┃ ┃ ┗ 📜LongTimeAge.js
+  ┃ ┣ 📜newTypeEffect.css
+  ┃ ┗ 📜page.js
+  ┣ 📂trip
+  ┃ ┣ 📂bg-css
+  ┃ ┃ ┣ 📜bg.css
+  ┃ ┃ ┣ 📜bg.css.map
+  ┃ ┃ ┗ 📜bg.scss
+  ┃ ┣ 📂center
+  ┃ ┃ ┣ 📂purchaseBtn
+  ┃ ┃ ┃ ┗ 📜PurchaseItems.js
+  ┃ ┃ ┗ 📜page.js
+  ┃ ┣ 📂deep-forest
+  ┃ ┃ ┗ 📜page.js
+  ┃ ┣ 📂dr-ohs-lab
+  ┃ ┃ ┣ 📜droh.css
+  ┃ ┃ ┣ 📜page.js
+  ┃ ┃ ┗ 📜ScriptComponent.js
+  ┃ ┣ 📂mountain
+  ┃ ┃ ┗ 📜page.js
+  ┃ ┣ 📂ocean
+  ┃ ┃ ┗ 📜page.js
+  ┃ ┣ 📂renderRandPokemon
+  ┃ ┃ ┣ 📂childComponet
+  ┃ ┃ ┃ ┣ 📜BallBox.js
+  ┃ ┃ ┃ ┣ 📜MonsterBall.js
+  ┃ ┃ ┃ ┗ 📜Template.js
+  ┃ ┃ ┗ 📜RenderRandPokemonData.js
+  ┃ ┣ 📂urban
+  ┃ ┃ ┗ 📜page.js
+  ┃ ┗ 📜page.js
+  ┣ 📜globals.css
+  ┣ 📜layout.js
+  ┗ 📜page.js
+  ```
+
+  
 
 ## 3. 프로젝트 설명
 
